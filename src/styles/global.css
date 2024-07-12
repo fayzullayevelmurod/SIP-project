@@ -1,0 +1,294 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+textarea:focus,
+select:focus {
+  outline: none !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+a {
+  display: inline-block;
+}
+
+a:active,
+a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #002033;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #0042690f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0042693d;
+  border-radius: 8px;
+}
+
+.wrapper {
+  /* min-width: 1920px; */
+  width: 100%;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.mt-4 {
+  margin-top: 4px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+.flex {
+  display: flex;
+}
+
+.flex-item {
+  display: flex;
+  justify-content: center;
+}
+/* core style end */
+
+/* intro */
+.intro {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding: 15px 16px 36px 16px;
+  background: #fff;
+  height: calc(100vh - 48px);
+  overflow-y: auto;
+}
+
+.intro .title {
+  margin: 24px 0 28px 0;
+}
+
+.intro-box {
+  max-width: 806px;
+  margin: 0 auto;
+}
+
+.intro-box img {
+  width: 160px;
+  height: 120px;
+}
+
+.intro-cards {
+  display: grid;
+  margin-top: 20px;
+  row-gap: 20px;
+  grid-template-columns: 175px 175px 175px;
+  justify-content: space-between;
+}
+
+.intro-card {
+  text-align: center;
+}
+
+.page-info {
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* intro end */
+
+/* not-found__page */
+.not-found__box {
+  width: 100%;
+  padding: 15px 0 0 16px;
+  background: #fff;
+}
+.not-found-title {
+  font-size: 23px;
+  line-height: 32px;
+  margin-top: 24px;
+}
+.not-found {
+  width: 100%;
+  height: 100%;
+}
+
+.null-content {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.null-content img {
+  height: 192px;
+}
+
+.main.h-full {
+  height: 100vh;
+}
+/* not-found page end */
+
+.action-bar {
+  box-shadow: 0px 2px 4px 0px #00000014;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 8px auto 0 auto;
+}
+.action-bar .img-box {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.action-bar .line {
+  background: #97b2c4;
+  width: 1px;
+  height: 16px;
+  margin: 0 6px;
+}
+.Popover.ContextMenuLevel-Desktop {
+  z-index: 10;
+}
+.gap-8 {
+  gap: 8px;
+}
+.items-center {
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 3px;
+    background: #0042690f;
+  }
+}
+
+.button-separator {
+  width: 1px;
+  background: #00416633;
+  height: 24px;
+}
+
+.title-sm {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #002033;
+}
+
+.show-more__btn {
+  width: 100%;
+  display: flex;
+  gap: 11px;
+  justify-content: center;
+}
+.show-more__btn .Button-Label {
+  flex-grow: 0;
+}
+
+.custom-choice-group {
+  display: flex;
+  border: 1px solid #00426947;
+  border-radius: 4px;
+}
+
+.custom-choice-group-item {
+  cursor: pointer;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.custom-choice-group-item.selected {
+  border-color: #00426947; /* Change to your desired color */
+  background-color: #00426912; /* Change to your desired background color */
+}
+.custom-choice-group-item.selected path {
+  fill: #00395ccc;
+}
+
+.Table {
+  border: 1px solid #00416633;
+  border-radius: 8px;
+  overflow-x: auto;
+  width: 100%;
+}
+.TableHeader-Row {
+  .TableCell-Wrapper_verticalAlign_center {
+    color: #00203399;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+  }
+}
+.Checkbox-Label {
+  margin-left: 24px;
+}

@@ -1,0 +1,112 @@
+.personal-information__page {
+  .right-box {
+    flex: 1;
+    height: calc(100vh - 48px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 16px 40px 16px;
+  }
+  .personal-information__header {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    .title {
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+  }
+  .form-boxes,
+  .auth-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    max-width: 680px;
+    width: 100%;
+    margin: 40px auto 0 auto;
+  }
+  .form-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+  .form-group {
+    display: flex;
+    gap: 8px;
+    & > .form-box {
+      flex: 1;
+    }
+  }
+  .TextField-Counter {
+    display: none;
+  }
+  .canary--DragNDropField {
+    row-gap: 8px;
+  }
+  // .auth-box
+  .auth-box {
+    border: 1px solid #0041661f;
+    padding: 16px;
+    border-radius: 12px;
+    .auth-bottom {
+      display: flex;
+      gap: 12px;
+      justify-content: end;
+    }
+  }
+  .TextField-Side_position_right {
+    svg path {
+      fill: #00395ccc;
+    }
+  }
+  .TextField-Side_position_left {
+    svg path {
+      fill: #00203399;
+    }
+  }
+}
+
+// media
+@media screen and (max-width: 992px) {
+  .personal-information__page {
+    .header {
+      .media-block__hamburger {
+        display: flex;
+      }
+      .hamburger-menu {
+        display: none;
+        &.media-block {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .personal-information__page {
+    overflow: hidden;
+    .canary--DragNDropField {
+      min-height: 140px;
+      .Text_view_ghost {
+        font-size: 12px;
+      }
+    }
+    .TabsFitModeScrollWrapper .TabsFitModeScrollWrapper-Button {
+      display: none;
+    }
+    .header .search-box {
+      display: none;
+    }
+    .tabs {
+      margin-right: -16px;
+    }
+    .Tabs-List_direction_horizontal {
+      padding-right: 16px;
+    }
+  }
+  .personal-information__page .personal-information__header {
+    padding: 12px 0;
+  }
+}

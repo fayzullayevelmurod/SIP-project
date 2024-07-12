@@ -1,0 +1,117 @@
+.projects-page {
+  .scroll-box {
+    height: calc(100vh - 48px);
+    overflow-y: auto;
+    width: 100%;
+  }
+  .projects-body {
+    max-width: 1200px;
+    padding: 12px 16px;
+    margin: 0 auto;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    .Card {
+      box-shadow: 0px 1px 1px 0px #0000000f;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+      cursor: pointer;
+      &:hover {
+        background-color: #0042690d;
+      }
+    }
+  }
+  .ChoiceGroup-Label_focus:after {
+    background-color: #00426912;
+  }
+  .Table {
+    border: 1px solid #00416633;
+    border-radius: 8px;
+    overflow-x: auto;
+    width: 100%;
+  }
+  .TableHeader-Row {
+    .TableCell-Wrapper_verticalAlign_center {
+      color: #00203399;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 0.01em;
+    }
+  }
+}
+
+// project-number__page
+.project-number__page {
+  .project-number__body {
+    padding: 12px;
+    width: 1000%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    height: calc(100vh - 48px);
+    overflow-y: auto;
+  }
+  .card-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-bottom: 1px solid #00203314;
+    padding-bottom: 16px;
+  }
+  .Card {
+    width: 100%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  .right-sidebar {
+    border: 1px solid #00416633;
+    box-shadow: 0px 1px 1px 0px #0000000f;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    height: fit-content;
+    min-width: unset;
+    max-width: unset;
+  }
+  .Card {
+    box-shadow: 0px 1px 1px 0px #0000000f;
+    border: 1px solid #00416633;
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .User-Info,
+  .User-Name {
+    white-space: nowrap;
+    overflow: visible;
+    max-width: 100%;
+  }
+  .user-box {
+    height: 32px;
+  }
+  .user-job {
+    padding: 4px;
+    margin-left: 28px;
+    height: 32px;
+    line-height: 24px;
+  }
+  .user-list {
+    li {
+      border-bottom: 1px solid #00203314;
+      padding: 4px;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
