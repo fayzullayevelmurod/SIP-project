@@ -86,8 +86,27 @@
     .h-scroll {
       overflow-x: scroll;
     }
-    .tablet-img img{
+    .tablet-img img {
       width: 768px;
     }
+  }
+  .object-model__page {
+    .h-scroll {
+      overflow-x: hidden;
+    }
+    .object-model__img {
+      width: 100%;
+      height: 650px;
+      padding: 0 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .object-model__page .object-model__img {
+    height: 470px;
+  }
+  .header .header-left {
+    gap: 8px;
   }
 }

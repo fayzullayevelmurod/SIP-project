@@ -29,7 +29,7 @@ const ObjectModel = () => {
   }, []);
 
   return (
-    <div className="visualization-page">
+    <div className="visualization-page object-model__page">
       <Header
         handleToggleNav={handleToggleNav}
         searchHeader={true}
