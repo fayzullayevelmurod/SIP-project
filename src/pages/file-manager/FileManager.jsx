@@ -30,6 +30,8 @@ import { IconColumns } from "@consta/icons/IconColumns";
 import { IconWellFolder } from "@consta/icons/IconWellFolder";
 import { IconMeatball } from "@consta/icons/IconMeatball";
 import { IconArrowRight } from "@consta/icons/IconArrowRight";
+import { IconArrowPrevious } from "@consta/icons/IconArrowPrevious";
+import { IconArrowNext } from "@consta/icons/IconArrowNext";
 import { Attachment } from "@consta/uikit/Attachment";
 
 const pagesLink = [
@@ -126,6 +128,17 @@ const FileManager = () => {
   const { handleToggleNav, activeNav } = useContext(ShowNavContext);
   const [value, setValue] = useState(items[0]);
   const [value2, setValue2] = useState(items2[1]);
+  const [activeSidebar, setActiveSidebar] = useState({
+    left: false,
+    right: false,
+  });
+
+  const handleOpenSidebar = (sidebar) => {
+    setActiveSidebar((prevState) => ({
+      ...prevState,
+      [sidebar]: !prevState[sidebar],
+    }));
+  };
 
   return (
     <div className="file-manager__page">
@@ -145,7 +158,17 @@ const FileManager = () => {
           openNav={activeNav}
           setActiveNav={activeNav}
         />
-        <div className="left-sidebar">
+        <div
+          className={`left-sidebar ${activeSidebar.left ? "show-sidebar" : ""}`}
+        >
+          <Button
+            view="clear"
+            size="xs"
+            onlyIcon
+            iconLeft={IconArrowNext}
+            onClick={() => handleOpenSidebar("left")}
+            className={`media-open__sidebar-btn MixSpace_mB_s`}
+          />
           <div className="sidebar-header">
             <Text as="h1" view="primary">
               Мои обьекты
@@ -164,7 +187,7 @@ const FileManager = () => {
             />
             <Button
               size="xs"
-              iconLeft={IconKernStroked}
+              iconLeft={IconArrowPrevious}
               label="Загрузить из БД"
               view="secondary"
             />
@@ -245,6 +268,18 @@ const FileManager = () => {
             </Text>
             <div className="btns">
               <div>
+                <Button
+                  size="xs"
+                  view="clear"
+                  iconLeft={IconArrowNext}
+                  onClick={() => handleOpenSidebar("left")}
+                />
+                <Button
+                  size="xs"
+                  view="clear"
+                  iconLeft={IconArrowPrevious}
+                  onClick={() => handleOpenSidebar("right")}
+                />
                 <Button size="xs" view="clear" iconLeft={IconSearchStroked} />
                 <Button size="xs" view="clear" iconLeft={IconSortDownCenter} />
               </div>
@@ -616,7 +651,19 @@ const FileManager = () => {
             </div>
           </div>
         </div>
-        <div className="right-sidebar">
+        <div
+          className={`right-sidebar ${
+            activeSidebar.right ? "show-sidebar" : ""
+          }`}
+        >
+          <Button
+            view="clear"
+            size="xs"
+            onlyIcon
+            iconLeft={IconArrowNext}
+            onClick={() => handleOpenSidebar("right")}
+            className={`media-open__sidebar-btn MixSpace_mB_s`}
+          />
           <div className="sidebar-header">
             <Text as="h1" view="primary">
               Скважина 1

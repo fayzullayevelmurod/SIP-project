@@ -6,8 +6,10 @@ import {
   Dashboard,
   Directory,
   FileManager,
+  GeomodelingDashboard,
   Interpretation,
   Intro,
+  Map,
   Messenger,
   NotFound,
   ObjectModel,
@@ -49,4 +51,6 @@ const routes = [
   { path: "report", element: <Report /> },
   { path: "projects", element: <Projects /> },
   { path: "projects-number", element: <ProjectNumbers /> },
+  { path: "map", element: <Map /> },
+  { path: "geomodeling-dashboard", element: <GeomodelingDashboard /> },
 ];

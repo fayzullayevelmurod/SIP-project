@@ -1,4 +1,5 @@
 .projects-page {
+
   .scroll-box {
     height: calc(100vh - 48px);
     overflow-y: auto;
@@ -114,4 +115,72 @@
       }
     }
   }
+  .MixFlex_direction_row {
+    flex-direction: row;
+  }
+  .stories .Badge {
+    height: unset;
+  }
+  .stories {
+    .Card {
+      row-gap: 12px;
+    }
+    .step-card {
+      display: flex;
+      align-items: unset;
+      gap: 12px;
+    }
+    .step-box {
+      max-width: 24px;
+      margin-top: 12px;
+    }
+    .icon {
+      width: 24px;
+      height: 24px;
+      background: #dee4e8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .line {
+      height: 100%;
+      width: 4px;
+      background: #dee4e8;
+      margin: 0 auto;
+
+      &.last-child {
+        height: 37%;
+      }
+    }
+    .Attachment {
+      background: #0020330d;
+      border-radius: 0;
+
+      &:first-child {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      &:last-child {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    }
+    .info-bg {
+      padding: 12px;
+      border-radius: 8px;
+      background: #0020330d;
+      p {
+        max-width: 600px;
+      }
+    }
+  }
+  .form-box {
+    max-width: 960px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+.rounded-12 {
+  border-radius: 12px;
 }

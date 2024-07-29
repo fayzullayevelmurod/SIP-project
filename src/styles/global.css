@@ -292,3 +292,9 @@ body {
 .Checkbox-Label {
   margin-left: 24px;
 }
+
+@media (max-width: 992px) {
+  .not-found__box {
+    height: calc(100vh - 48px);
+  }
+}

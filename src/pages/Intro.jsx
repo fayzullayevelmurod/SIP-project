@@ -12,18 +12,22 @@ const Intro = () => {
 
   const pagesSimple = [
     {
-      label: 'Geoapp',
-      href: '#!',
+      label: "Geoapp",
+      href: "#!",
     },
     {
-      label: 'Лейауты',
-      href: '#!',
-    }
+      label: "Лейауты",
+      href: "#!",
+    },
   ];
 
   return (
     <>
-      <Header searchHeader={true} handleToggleNav={handleToggleNav} hamburgerLogo={true} />
+      <Header
+        searchHeader={true}
+        handleToggleNav={handleToggleNav}
+        hamburgerLogo={true}
+      />
 
       <div className="flex items-start">
         <NavbarLayout
@@ -73,89 +77,85 @@ const Intro = () => {
                   Данные не найдены
                 </Text>
               </Link>
-              <Link className="intro-card" to='file-manager'>
+              <Link className="intro-card" to="file-manager">
                 <img src={assets.page1_7} alt="" />
                 <Text size="s" view="secondary" className="page-info">
                   Менеджер данных
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="#!">
                 <img src={assets.page1_8} alt="" />
-                <Text size="s" view="secondary" className="page-info">
-                  3.1 Header + Navbar Default
-                </Text>
+                <Text size="s" view="secondary" className="page-info"></Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="corr-circuit">
                 <img src={assets.page1_9} alt="" />
                 <Text size="s" view="secondary" className="page-info">
-                  3.2 Header + Navbar Open
+                  Корр-схема
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="object-model">
                 <img src={assets.page10} alt="" />
                 <Text size="s" view="secondary" className="page-info">
-                  3.3 Header + Navbar and Two Panel
+                  Модель обьекта
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="interpretation">
                 <img src={assets.page11} alt="" />
                 <Text size="s" view="secondary" className="page-info">
-                  4.1 Navbar + Header Default
+                  Interpretation
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="visualization-2D">
                 <img src={assets.page12} alt="" />
                 <Text size="s" view="secondary" className="page-info">
-                  4.2 Navbar + Header Open
+                  2D сцена
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="visualization-3D">
                 <img src={assets.page13} alt="" />
                 <Text size="s" view="secondary" className="page-info">
-                  4.3 Navbar + Header and Two Panel
+                  3D сцена
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="tablet">
                 <img src={assets.page14} alt="" />
                 <Text size="s" view="secondary" className="page-info">
-                  5.1 Navbar + Header Modern
+                  Планшет
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="catalog">
                 <img src={assets.page15} alt="" />
                 <Text size="s" view="secondary" className="page-info">
-                  5.2 Navbar + Header Open
+                  Каталог
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="dashboard">
                 <img src={assets.page16} alt="" />
                 <Text size="s" view="secondary" className="page-info">
-                  5.3 Navbar + Header and Two Panel
+                  Сводная
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="report">
                 <img src={assets.page17} alt="" />
                 <Text size="s" view="secondary" className="page-info">
-                  6.1 Other - Fixed width
+                  Отчет
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="projects">
                 <img src={assets.page18} alt="" />
                 <Text size="s" view="secondary" className="page-info">
-                  6.2 Other - Overlay content
+                  Проекты
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="projects-number">
                 <img src={assets.page19} alt="" />
                 <Text size="s" view="secondary" className="page-info">
-                  6.2 Other - Overlay content
+                  Освоение месторождения №207
                 </Text>
               </Link>
-              <Link className="intro-card" to='#!'>
+              <Link className="intro-card" to="#!">
                 <img src={assets.page1_6} alt="" />
-                <Text size="s" view="secondary" className="page-info">
-                  7.1 Other - Open Panel or Modal
-                </Text>
+                <Text size="s" view="secondary" className="page-info"></Text>
               </Link>
             </div>
           </div>
@@ -163,6 +163,6 @@ const Intro = () => {
       </div>
     </>
   );
-}
+};
 
-export default Intro
+export default Intro;

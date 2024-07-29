@@ -24,3 +24,5 @@ export { default as Dashboard } from "./dashboard/Dashboard";
 export { default as Report } from "./dashboard/Report";
 export { default as Projects } from "./projects/Projects";
 export { default as ProjectNumbers } from "./projects/ProjectNumbers";
+export { default as Map } from "./map/Map";
+export {default as GeomodelingDashboard} from './geomodeling-dashboard/GeomodelingDashboard';

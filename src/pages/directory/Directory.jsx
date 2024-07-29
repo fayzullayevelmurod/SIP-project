@@ -20,6 +20,7 @@ import { IconFolderOpen } from "@consta/icons/IconFolderOpen";
 import { ShowNavContext } from "../../context/ShowNavContext";
 import { IconSearchStroked } from "@consta/icons/IconSearchStroked";
 import { IconSortDownCenter } from "@consta/icons/IconSortDownCenter";
+import { Grid, GridItem } from "@consta/uikit/Grid";
 
 const rows = [
   {
@@ -191,7 +192,7 @@ const Directory = () => {
         hamburgerLogo={true}
         dropdownLogo={true}
       />
-      <div className="flex">
+      <Grid className="flex">
         <NavbarLayout
           hideHamburger={true}
           openNav={activeNav}
@@ -319,7 +320,7 @@ const Directory = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Grid>
     </div>
   );
 };

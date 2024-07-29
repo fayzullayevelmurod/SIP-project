@@ -19,12 +19,21 @@ import { Card } from "@consta/uikit/Card";
 import { Attachment } from "@consta/uikit/Attachment";
 import { AvatarGroup } from "@consta/uikit/AvatarGroup";
 import { Tag } from "@consta/uikit/Tag";
-import { IconAllDone } from "@consta/icons/IconAllDone";
-import { IconAlert } from "@consta/icons/IconAlert";
 import { IconAttach } from "@consta/icons/IconAttach";
 import DropdownTable from "./Tablel";
 import { IconUser } from "@consta/icons/IconUser";
 import { User } from "@consta/uikit/User";
+import { IconDownload } from "@consta/icons/IconDownload";
+import { Avatar } from "@consta/uikit/Avatar";
+import { IconEdit } from "@consta/icons/IconEdit";
+import { IconUpload } from "@consta/icons/IconUpload";
+import { IconCommentStroked } from "@consta/icons/IconCommentStroked";
+import { IconRevert } from "@consta/icons/IconRevert";
+import { TextField } from "@consta/uikit/TextField";
+import { IconQuestion } from "@consta/icons/IconQuestion";
+import { IconSendMessage } from "@consta/icons/IconSendMessage";
+import { Select } from "@consta/uikit/Select";
+import { DragNDropField } from "@consta/uikit/DragNDropField";
 
 const pageLinks = [
   {
@@ -157,10 +166,40 @@ const avatarGroupItems = [
   },
 ];
 
+const items = [
+  {
+    label: "Исследование",
+    id: 1,
+  },
+  {
+    label: "Исследование",
+    id: 2,
+  },
+  {
+    label: "Исследование",
+    id: 3,
+  },
+];
+const items2 = [
+  {
+    label: "Андрей Петрович",
+    id: 1,
+  },
+  {
+    label: "Андрей Петрович",
+    id: 2,
+  },
+  {
+    label: "Андрей Петрович",
+    id: 3,
+  },
+];
+
 const ProjectNumbers = () => {
   const { handleToggleNav, activeNav } = useContext(ShowNavContext);
-  const [tabValue, setTabValue] = useState(tabItems[3]);
-
+  const [tabValue, setTabValue] = useState(tabItems[1]);
+  const [value, setValue] = useState();
+  const [value2, setValue2] = useState();
   return (
     <div className="project-number__page">
       <Header
@@ -347,7 +386,7 @@ const ProjectNumbers = () => {
           {tabValue == tabItems[1] && (
             <div>
               <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between w-full">
-                <Text className="title-sm">Услуги и работы</Text>
+                <Text className="title-sm MixSpace_mB_s">Услуги и работы</Text>
                 <Button
                   size="xs"
                   view="ghost"
@@ -422,15 +461,72 @@ const ProjectNumbers = () => {
               <Card>
                 <ul className="user-list">
                   <li>
-                    <div className="MixFlex MixFlex_align_center">
-                      <User
-                        size="s"
-                        name="Беляев Алексей Петрович"
-                        className="user-box"
-                      />
-                      <Text size="xs" view="secondary">
-                        belyev.ap@mail.com
-                      </Text>
+                    <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between">
+                      <div className="MixFlex MixFlex_align_center">
+                        <User
+                          size="s"
+                          name="Беляев Алексей Петрович"
+                          className="user-box"
+                        />
+                        <Text size="xs" view="secondary">
+                          belyev.ap@mail.com
+                        </Text>
+                      </div>
+                      <Button size="xs" view="clear" iconLeft={IconKebab} />
+                    </div>
+                    <Text size="xs" view="secondary" className="user-job">
+                      Администратор, Сейсмик
+                    </Text>
+                  </li>
+                  <li>
+                    <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between">
+                      <div className="MixFlex MixFlex_align_center">
+                        <User
+                          size="s"
+                          name="Беляев Алексей Петрович"
+                          className="user-box"
+                        />
+                        <Text size="xs" view="secondary">
+                          belyev.ap@mail.com
+                        </Text>
+                      </div>
+                      <Button size="xs" view="clear" iconLeft={IconKebab} />
+                    </div>
+                    <Text size="xs" view="secondary" className="user-job">
+                      Администратор, Сейсмик
+                    </Text>
+                  </li>
+                  <li>
+                    <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between">
+                      <div className="MixFlex MixFlex_align_center">
+                        <User
+                          size="s"
+                          name="Беляев Алексей Петрович"
+                          className="user-box"
+                        />
+                        <Text size="xs" view="secondary">
+                          belyev.ap@mail.com
+                        </Text>
+                      </div>
+                      <Button size="xs" view="clear" iconLeft={IconKebab} />
+                    </div>
+                    <Text size="xs" view="secondary" className="user-job">
+                      Администратор, Сейсмик
+                    </Text>
+                  </li>
+                  <li>
+                    <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between">
+                      <div className="MixFlex MixFlex_align_center">
+                        <User
+                          size="s"
+                          name="Беляев Алексей Петрович"
+                          className="user-box"
+                        />
+                        <Text size="xs" view="secondary">
+                          belyev.ap@mail.com
+                        </Text>
+                      </div>
+                      <Button size="xs" view="clear" iconLeft={IconKebab} />
                     </div>
                     <Text size="xs" view="secondary" className="user-job">
                       Администратор, Сейсмик
@@ -438,6 +534,252 @@ const ProjectNumbers = () => {
                   </li>
                 </ul>
               </Card>
+            </div>
+          )}
+          {tabValue == tabItems[4] && (
+            <div className="stories">
+              <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between w-full">
+                <Text className="title-sm">События</Text>
+                <Button
+                  size="xs"
+                  view="ghost"
+                  iconLeft={IconDownload}
+                  label="Выгрузить лог"
+                />
+              </div>
+              <div>
+                <div className="MixFlex MixSpace_mT_s step-card">
+                  <div className="step-box">
+                    <div className="icon">
+                      <IconEdit size="xs" view="secondary" />
+                    </div>
+                    <div className="line"></div>
+                  </div>
+                  <Card className="MixFlex MixFlex_align_center MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                    <div className="MixFlex MixFlex_align_center MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                      <Avatar size="s" name="Артур Утяшев" />
+                      <Text size="xs" weight="semibold">
+                        Артур Утяшев
+                      </Text>
+                      <Text size="xs" view="secondary">
+                        изменил статус обьекта
+                      </Text>
+                      <div className="MixFlex MixFlex_gap_2xs MixFlex_align_stretch">
+                        <Tag size="xs" label="КТ-750" mode="check" />
+                        <Badge status="system" label="Черновик" size="xs" />
+                      </div>
+                      <Text size="xs" view="secondary">
+                        на
+                      </Text>
+                      <Badge label="в работе" status="normal" size="xs" />
+                    </div>
+                    <div className="MixFlex MixFlex_gap_s MixFlex_align_center">
+                      <Text size="xs" view="secondary">
+                        2 часа назад
+                      </Text>
+                      <Button size="xs" view="clear" iconLeft={IconKebab} />
+                    </div>
+                  </Card>
+                </div>
+                <div className="MixFlex MixSpace_mT_s step-card">
+                  <div className="step-box">
+                    <div className="icon">
+                      <IconUpload size="xs" view="secondary" />
+                    </div>
+                    <div className="line"></div>
+                  </div>
+                  <Card>
+                    <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                      <div className="MixFlex MixFlex_align_center MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                        <Avatar size="s" name="Артур Утяшев" />
+                        <Text size="xs" weight="semibold">
+                          Сергей Светлаков
+                        </Text>
+                        <Text size="xs" view="secondary">
+                          добавил файлы
+                        </Text>
+                        <Tag size="xs" label="3 шт." mode="button" />
+                      </div>
+                      <div className="MixFlex MixFlex_gap_s MixFlex_align_center">
+                        <Text size="xs" view="secondary">
+                          2 часа назад
+                        </Text>
+                        <Button size="xs" view="clear" iconLeft={IconKebab} />
+                      </div>
+                    </div>
+                    <div>
+                      <Attachment
+                        size="xs"
+                        fileName="Данные исследований.pdf"
+                        fileExtension="loading"
+                        fileDescription="Загрузка 33%"
+                        withPictogram={true}
+                      />
+                      <Attachment
+                        size="xs"
+                        fileName="Данные исследований Зимнее Каротажи.xls"
+                        fileExtension="xls"
+                        fileDescription="1,5 Mб  21.02.2019, 14:12 "
+                        withPictogram={true}
+                      />
+                      <Attachment
+                        size="xs"
+                        fileName="Данные исследований Зимнее Кривые.doc"
+                        fileExtension="doc"
+                        fileDescription="1,5 Mб  21.02.2019, 14:12 "
+                        withPictogram={true}
+                      />
+                    </div>
+                  </Card>
+                </div>
+                <div className="MixFlex MixSpace_mT_s step-card">
+                  <div className="step-box">
+                    <div className="icon">
+                      <IconCommentStroked size="xs" view="secondary" />
+                    </div>
+                    <div className="line"></div>
+                  </div>
+                  <Card>
+                    <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                      <div className="MixFlex MixFlex_align_center MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                        <Avatar size="s" name="Артур Утяшев" />
+                        <Text size="xs" weight="semibold">
+                          Ильяс Хисматуллин
+                        </Text>
+                        <Text size="xs" view="secondary">
+                          оставил комментарий в проекте
+                        </Text>
+                        <Tag size="xs" label="ГЕО" mode="check" />
+                      </div>
+                      <div className="MixFlex MixFlex_gap_s MixFlex_align_center">
+                        <Text size="xs" view="secondary">
+                          2 часа назад
+                        </Text>
+                        <Button size="xs" view="clear" iconLeft={IconKebab} />
+                      </div>
+                    </div>
+                    <div className="info-bg">
+                      <Text as="p" size="xs" view="secondary">
+                        Добро пожаловать в систему GeoUI. С помощью нашего
+                        сервиса, помогите дизайнерам и разработчикам создавать
+                        красивые продукты, которые будут более гибкими и
+                        работать с удовольствием
+                      </Text>
+                    </div>
+                  </Card>
+                </div>
+                <div className="MixFlex MixSpace_mT_s step-card">
+                  <div className="step-box">
+                    <div className="icon">
+                      <IconRevert size="xs" view="secondary" />
+                    </div>
+                    <div className="line last-child"></div>
+                  </div>
+                  <Card className="MixFlex MixFlex_align_center MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                    <div className="MixFlex MixFlex_align_center MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                      <Avatar size="s" name="Артур Утяшев" />
+                      <Text size="xs" weight="semibold">
+                        Система
+                      </Text>
+                      <Text size="xs" view="secondary">
+                        перезагрузка серверов
+                      </Text>
+                    </div>
+                    <div className="MixFlex MixFlex_gap_s MixFlex_align_center">
+                      <Text size="xs" view="secondary">
+                        2 часа назад
+                      </Text>
+                      <Button size="xs" view="clear" iconLeft={IconKebab} />
+                    </div>
+                  </Card>
+                </div>
+              </div>
+            </div>
+          )}
+          {tabValue == tabItems[5] && (
+            <div className="form-box">
+              <Text className="title-sm MixSpace_mB_s">Настройки</Text>
+              {/* <Text size="xs" view="secondary">Название</Text> */}
+              <form className="auth-box MixFlex MixFlex_direction_column MixFlex_gap_s MixCard_border MixSpace_pT_m MixSpace_pB_m MixSpace_pL_m MixSpace_pR_m rounded-12">
+                <TextField
+                  label="Название"
+                  labelIcon={IconQuestion}
+                  size="xs"
+                  required
+                  value="Освоение месторождения №207"
+                  type="text"
+                  placeholder="Освоение месторождения №207"
+                />
+                <Select
+                  size="xs"
+                  items={items}
+                  value={value}
+                  onChange={setValue}
+                  label="Категория"
+                  placeholder="Исследование"
+                  caption="Начните вводить текст, а формат подстроится автоматически"
+                />
+                <TextField
+                  label="Общая стоимость"
+                  labelIcon={IconQuestion}
+                  size="xs"
+                  required
+                  value="28 460 460"
+                  type="text"
+                  rightSide="руб"
+                  placeholder="Освоение месторождения №207"
+                />
+                <Select
+                  size="xs"
+                  items={items2}
+                  value={value2}
+                  onChange={setValue2}
+                  label="Автор"
+                  placeholder="Андрей Петрович"
+                />
+                <TextField
+                  label="Описание"
+                  labelIcon={IconQuestion}
+                  size="xs"
+                  required
+                  type="textarea"
+                  rows={4}
+                  placeholder="Введите текст"
+                />
+                <DragNDropField
+                  className="w-full"
+                  accept={[".PNG", ".TIFF", "JPG"]}
+                >
+                  {({ openFileDialog }) => (
+                    <>
+                      <Text size="xs" view="secondary">
+                        Перетащите файлы или {" "}
+                        <Text
+                          as="span"
+                          size="xs"
+                          view="link"
+                          onClick={openFileDialog}
+                        >
+                          загрузите
+                        </Text>
+                      </Text>
+                      <Text size="xs" view="ghost" className="MixSpace_mT_xs">
+                        Поддерживаемые форматы: PNG, TIFF, JPG
+                      </Text>
+                    </>
+                  )}
+                </DragNDropField>
+
+                <div className="auth-bottom MixFlex MixFlex_justify_space-between MixFlex_align_center MixSpace_mT_s w-full">
+                  <Button view="ghost" size="xs" iconLeft={IconQuestion} />
+                  <Button
+                    label="Отправить"
+                    view="primary"
+                    size="xs"
+                    iconRight={IconSendMessage}
+                  />
+                </div>
+              </form>
             </div>
           )}
         </div>

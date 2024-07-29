@@ -51,6 +51,14 @@ import catalogImg5 from "./catalog-img-5.png";
 import catalogImg6 from "./catalog-img-6.png";
 import yandexDzen from "./icons/yandexDzen.svg";
 import statistiks from "./statistik.svg";
+import location from './icons/location.svg';
+import rule  from './icons/rulle.svg';
+import layout from './icons/layout.svg';
+import flow from './icons/flow.svg';
+import zoom from './icons/zoom.svg'
+import zoomMinus from './icons/zoom-minus.svg'
+
+
 export default {
   avatar,
   logo,
@@ -105,4 +113,10 @@ export default {
   catalogImg6,
   yandexDzen,
   statistiks,
+  location,
+  rule,
+  layout,
+  flow,
+  zoom,
+  zoomMinus,
 };

@@ -84,13 +84,6 @@ const NavbarLayout = (props) => {
           </>
         )}
         <div className="left-nav__boxes">
-          {/* <div className="nav-list active">
-            <div className="nav-list__icon">
-              <IconHome size="xs" />
-            </div>
-            <p className="nav-link">Главная</p>
-          </div> */}
-
           <Collapse
             className="nav-list active col"
             size="xs"
