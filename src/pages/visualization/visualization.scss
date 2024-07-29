@@ -63,3 +63,31 @@
     }
   }
 }
+
+// media
+@media screen and (max-width: 768px) {
+  .visualization-page {
+    .BreadcrumbsItem-Link,
+    .BreadcrumbsItem-Delimiter {
+      display: none;
+    }
+    .BreadcrumbsItem-Link_active {
+      display: block;
+    }
+    .tablet-img {
+      overflow-x: auto;
+      position: unset;
+      margin-top: 100px;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+    }
+    .h-scroll {
+      overflow-x: scroll;
+    }
+    .tablet-img img{
+      width: 768px;
+    }
+  }
+}
