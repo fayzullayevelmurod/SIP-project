@@ -5,18 +5,21 @@
     line-height: 24px;
     color: #002033;
   }
+
   &__content {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
     padding: 16px;
   }
+
   .scroll-box {
     height: calc(100vh - 48px);
     overflow-y: auto;
     width: 100%;
     padding-bottom: 56px;
   }
+
   &__header {
     padding: 24px 0;
     display: flex;
@@ -29,6 +32,7 @@
       line-height: 32px;
     }
   }
+
   .icon-card {
     background: #00426912;
     width: 48px;
@@ -42,6 +46,7 @@
       fill: #00395ccc;
     }
   }
+
   .cards {
     h3 {
       font-size: 15px;
@@ -49,10 +54,12 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
     .card {
       border-radius: 12px;
       cursor: pointer;
       transition: all 0.2s linear;
+
       .info {
         margin: 4px 0 12px 0;
         display: -webkit-box;
@@ -61,30 +68,38 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
       button {
         opacity: 0;
         transition: all 0.2s linear;
       }
+
       .top-box {
         padding: 12px 0 4px 0;
       }
+
       &:hover {
         background: #0042690d;
+
         button {
           opacity: 1;
         }
       }
     }
   }
+
   .Grid {
     width: 100%;
   }
+
   .gap-4 {
     gap: 4px;
   }
+
   .list-card {
     border-radius: 12px;
   }
+
   .list {
     .line {
       display: block;
@@ -100,16 +115,29 @@
         opacity: 0;
       }
     }
+
     .list-item {
       padding: 4px;
       cursor: pointer;
       border-radius: 8px;
+
       &:hover {
         background: #0042690d;
-        & + .line {
+
+        &+.line {
           opacity: 0;
         }
       }
     }
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .catalog-page .list-card .hidden-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100px;
   }
 }

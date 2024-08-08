@@ -1,31 +1,31 @@
-import React, { useContext, useState } from "react";
-import "./projects.scss";
-import { Header } from "../../layouts/Header";
-import { ShowNavContext } from "../../context/ShowNavContext";
-import { NavbarLayout } from "../../components/Navbar";
-import CustomBreadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import { Text } from "@consta/uikit/Text";
-import { Button } from "@consta/uikit/Button";
-import { IconSearchStroked } from "@consta/icons/IconSearchStroked";
-import { IconSortDownCenter } from "@consta/icons/IconSortDownCenter";
-import { ChoiceGroup } from "@consta/uikit/ChoiceGroup";
-import { IconTable2 } from "@consta/icons/IconTable2";
-import { IconColumns } from "@consta/icons/IconColumns";
-import { Grid, GridItem } from "@consta/uikit/Grid";
-import { Card } from "@consta/uikit/Card";
-import { Badge } from "@consta/uikit/Badge";
-import { IconKebab } from "@consta/icons/IconKebab";
-import { Pagination } from "@consta/uikit/Pagination";
-import { Table } from "@consta/uikit/Table";
-import { Avatar } from "@consta/uikit/Avatar";
-import CustomChoiceGroup from "../../components/CustomChoiceGroup";
+import React, { useContext, useState } from 'react';
+import './projects.scss';
+import { Header } from '../../layouts/Header';
+import { ShowNavContext } from '../../context/ShowNavContext';
+import { NavbarLayout } from '../../components/Navbar';
+import CustomBreadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import { Text } from '@consta/uikit/Text';
+import { Button } from '@consta/uikit/Button';
+import { IconSearchStroked } from '@consta/icons/IconSearchStroked';
+import { IconSortDownCenter } from '@consta/icons/IconSortDownCenter';
+import { ChoiceGroup } from '@consta/uikit/ChoiceGroup';
+import { IconTable2 } from '@consta/icons/IconTable2';
+import { IconColumns } from '@consta/icons/IconColumns';
+import { Grid, GridItem } from '@consta/uikit/Grid';
+import { Card } from '@consta/uikit/Card';
+import { Badge } from '@consta/uikit/Badge';
+import { IconKebab } from '@consta/icons/IconKebab';
+import { Pagination } from '@consta/uikit/Pagination';
+import { Table } from '@consta/uikit/Table';
+import { Avatar } from '@consta/uikit/Avatar';
+import CustomChoiceGroup from '../../components/CustomChoiceGroup';
 
 const pageLinks = [
   {
-    label: "Geoapp",
-    href: "#!",
+    label: 'Geoapp',
+    href: '#!',
   },
-  { label: "Проекты" },
+  { label: 'Проекты' },
 ];
 
 const items = [
@@ -39,144 +39,144 @@ const items = [
 
 const rows = [
   {
-    id: "1",
-    name: "Добыча газа",
+    id: '1',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="system" label="В работе" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
   {
-    id: "2",
-    name: "Добыча газа",
+    id: '2',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="normal" label="В работе" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
   {
-    id: "3",
-    name: "Добыча газа",
+    id: '3',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="warning" label="В работе" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
   {
-    id: "4",
-    name: "Добыча газа",
+    id: '4',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="success" label="завершен" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
   {
-    id: "5",
-    name: "Добыча газа",
+    id: '5',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="system" label="В работе" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
   {
-    id: "6",
-    name: "Добыча газа",
+    id: '6',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="system" label="В работе" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
   {
-    id: "7",
-    name: "Добыча газа",
+    id: '7',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="normal" label="В работе" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
   {
-    id: "8",
-    name: "Добыча газа",
+    id: '8',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="warning" label="В работе" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
   {
-    id: "9",
-    name: "Добыча газа",
+    id: '9',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="success" label="завершен" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
   {
-    id: "10",
-    name: "Добыча газа",
+    id: '10',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="system" label="В работе" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
   {
-    id: "11",
-    name: "Добыча газа",
+    id: '11',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="success" label="завершен" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
   {
-    id: "12",
-    name: "Добыча газа",
+    id: '12',
+    name: 'Добыча газа',
     avatar: <Avatar name="Вадим Матвеев" size="xs" />,
-    year: "ГПН-Хантос",
+    year: 'ГПН-Хантос',
     production: <Badge size="xs" status="system" label="В работе" />,
-    reserves: "16 май",
+    reserves: '16 май',
     npv: <Button size="xs" view="clear" iconLeft={IconKebab} />,
   },
 ];
 
 const columns = [
   {
-    title: "Название",
-    name: "Добыча газа",
-    accessor: "name",
+    title: 'Название',
+    name: 'Добыча газа',
+    accessor: 'name',
   },
   {
-    title: "Статус",
-    accessor: "production",
+    title: 'Статус',
+    accessor: 'production',
   },
   {
-    title: "Автор",
-    accessor: "avatar",
+    title: 'Автор',
+    accessor: 'avatar',
   },
   {
-    title: "Дата изменения",
-    accessor: "reserves",
-    align: "left",
+    title: 'Дата изменения',
+    accessor: 'reserves',
+    align: 'left',
   },
   {
-    title: "Действия",
-    accessor: "npv",
-    align: "right",
+    title: 'Действия',
+    accessor: 'npv',
+    align: 'right',
   },
 ];
 
 const Projects = () => {
   const { handleToggleNav, activeNav } = useContext(ShowNavContext);
-  const [view, setView] = useState("grid");
+  const [view, setView] = useState('grid');
   const [page, setPage] = useState(1);
 
   return (
@@ -216,9 +216,26 @@ const Projects = () => {
               </div>
             </div>
             <div className="MixFlex MixFlex_direction_column MixFlex_gap_s">
-              {view === "grid" ? (
+              {view === 'grid' ? (
                 <>
-                  <Grid gap="s" cols={3}>
+                  <Grid
+                    gap="s"
+                    cols={3}
+                    breakpoints={{
+                      0: {
+                        cols: 1,
+                        gap: 'm',
+                      },
+                      480: {
+                        cols: 2,
+                        gap: 'm',
+                      },
+                      768: {
+                        cols: 34,
+                        gap: '2xl',
+                      },
+                    }}
+                  >
                     <GridItem>
                       <Card border={true} horizontalSpace="m" verticalSpace="m">
                         <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between">
@@ -240,7 +257,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>
@@ -267,7 +284,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>
@@ -294,7 +311,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>
@@ -321,7 +338,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>
@@ -348,7 +365,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>
@@ -375,7 +392,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>
@@ -402,7 +419,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>
@@ -429,7 +446,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>
@@ -456,7 +473,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>
@@ -483,7 +500,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>
@@ -510,7 +527,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>
@@ -537,7 +554,7 @@ const Projects = () => {
                         </div>
                         <div className="MixFlex MixFlex_justify_space-between MixFlex_align_center">
                           <Text size="xs" view="secondary">
-                            16 май{" "}
+                            16 май{' '}
                           </Text>
                           <Button size="xs" view="ghost" label="Подробнее" />
                         </div>

@@ -3,12 +3,14 @@
   background-size: cover;
   position: relative;
   z-index: 1;
+
   // height: 100vh;
   // overflow-y: auto;
   .h-scroll {
     height: calc(100vh - 48px);
     overflow-y: auto;
   }
+
   .action-bar {
     position: absolute;
     left: 50%;
@@ -16,21 +18,25 @@
     background: #fff;
     z-index: 10;
   }
+
   .Breadcrumbs-Item {
     width: fit-content;
   }
+
   .vizualization-img {
     max-width: 1000px;
     width: 100%;
     height: 1000px;
     margin: -8px auto 0 auto;
   }
+
   .image-box {
     img {
       width: 100%;
       height: 100%;
     }
   }
+
   .chart-img {
     // position: absolute;
     // transform: translateX(-50%);
@@ -41,17 +47,20 @@
     height: 1077px;
     z-index: -1;
   }
+
   .grid-img {
     max-width: 1200px;
     width: 100%;
     height: 1058px;
     margin: 0 auto;
   }
+
   .object-model__img {
     height: 872px;
     width: 715px;
     margin: 0 auto;
   }
+
   .tablet-img {
     position: absolute;
     z-index: -1;
@@ -65,35 +74,53 @@
 }
 
 // media
+@media screen and (max-width: 992px) {
+  .visualization-3d {
+    .chart-img {
+      width: 100%;
+      padding: 0 20px;
+      height: 800px;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .visualization-page {
+
     .BreadcrumbsItem-Link,
     .BreadcrumbsItem-Delimiter {
       display: none;
     }
+
     .BreadcrumbsItem-Link_active {
       display: block;
     }
+
     .tablet-img {
       overflow-x: auto;
       position: unset;
       margin-top: 100px;
+      display: none;
 
       &::-webkit-scrollbar {
         height: 5px;
       }
     }
+
     .h-scroll {
       overflow-x: scroll;
     }
+
     .tablet-img img {
       width: 768px;
     }
   }
+
   .object-model__page {
     .h-scroll {
       overflow-x: hidden;
     }
+
     .object-model__img {
       width: 100%;
       height: 650px;
@@ -103,10 +130,31 @@
 }
 
 @media screen and (max-width: 480px) {
+  .visualization-page {
+    background-color: #ECF1F4;
+  }
+
   .object-model__page .object-model__img {
     height: 470px;
   }
+
   .header .header-left {
     gap: 8px;
+  }
+
+  .visualization-3d .h-scroll {
+    overflow: hidden;
+  }
+
+  .visualization-3d .chart-img {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 475px;
+      height: 549px;
+    }
   }
 }

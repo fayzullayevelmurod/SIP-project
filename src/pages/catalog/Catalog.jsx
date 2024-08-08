@@ -1,89 +1,87 @@
-import React, { useContext, useState } from "react";
-import { Header } from "../../layouts/Header";
-import { ShowNavContext } from "../../context/ShowNavContext";
-import { NavbarLayout } from "../../components/Navbar";
-import CustomBreadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import { Text } from "@consta/uikit/Text";
-import { Button } from "@consta/uikit/Button";
-import { IconChatFilled } from "@consta/icons/IconChatFilled";
-import { Card } from "@consta/uikit/Card";
-import { Grid, GridItem } from "@consta/uikit/Grid";
-import { IconDocFilled } from "@consta/icons/IconDocFilled";
-import { IconForward } from "@consta/icons/IconForward";
-import { IconCommentAddFilled } from "@consta/icons/IconCommentAddFilled";
-import { IconFolderClosed } from "@consta/icons/IconFolderClosed";
-import { IconTeam } from "@consta/icons/IconTeam";
-import "./catalog.scss";
-import assets from "../../assets";
-import { Tag } from "@consta/uikit/Tag";
-import { Avatar } from "@consta/uikit/Avatar";
-import { List } from "@consta/uikit/ListCanary";
-import { Badge } from "@consta/uikit/Badge";
-import { IconKebab } from "@consta/icons/IconKebab";
+import React, { useContext, useState } from 'react';
+import { Header } from '../../layouts/Header';
+import { ShowNavContext } from '../../context/ShowNavContext';
+import { NavbarLayout } from '../../components/Navbar';
+import CustomBreadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import { Text } from '@consta/uikit/Text';
+import { Button } from '@consta/uikit/Button';
+import { IconChatFilled } from '@consta/icons/IconChatFilled';
+import { Card } from '@consta/uikit/Card';
+import { Grid, GridItem } from '@consta/uikit/Grid';
+import { IconDocFilled } from '@consta/icons/IconDocFilled';
+import { IconForward } from '@consta/icons/IconForward';
+import { IconCommentAddFilled } from '@consta/icons/IconCommentAddFilled';
+import { IconFolderClosed } from '@consta/icons/IconFolderClosed';
+import { IconTeam } from '@consta/icons/IconTeam';
+import './catalog.scss';
+import assets from '../../assets';
+import { Tag } from '@consta/uikit/Tag';
+import { Avatar } from '@consta/uikit/Avatar';
+import { IconKebab } from '@consta/icons/IconKebab';
 
 const pageLinks = [
   {
-    label: "GeoUI",
-    href: "#!",
+    label: 'GeoUI',
+    href: '#!',
   },
   {
-    label: "Каталог",
+    label: 'Каталог',
   },
 ];
 
 const items = [
   {
-    label: "Первый — этот вариант не выбрать",
+    label: 'Первый — этот вариант не выбрать',
     leftIcon: assets.yandexDzen,
-    date: "26.02.2024 в 14:30",
+    date: '26.02.2024 в 14:30',
     rightIcon: IconKebab,
   },
   {
-    label: "Статистика сейсморазведки за 2020 год",
+    label: 'Статистика сейсморазведки за 2020 год',
     leftIcon: assets.yandexDzen,
-    date: "26.02.2024 в 14:30",
+    date: '26.02.2024 в 14:30',
     rightIcon: IconKebab,
   },
   {
-    label: "Данные скважин",
+    label: 'Данные скважин',
     leftIcon: assets.yandexDzen,
-    date: "26.02.2024 в 14:30",
+    date: '26.02.2024 в 14:30',
     rightIcon: IconKebab,
   },
   {
-    label: "Первый — этот вариант не выбрать",
+    label: 'Первый — этот вариант не выбрать',
     leftIcon: assets.yandexDzen,
-    date: "26.02.2024 в 14:30",
+    date: '26.02.2024 в 14:30',
     rightIcon: IconKebab,
   },
   {
-    label: "Статистика сейсморазведки за 2020 год",
+    label: 'Статистика сейсморазведки за 2020 год',
     leftIcon: assets.yandexDzen,
-    date: "26.02.2024 в 14:30",
+    date: '26.02.2024 в 14:30',
     rightIcon: IconKebab,
   },
   {
-    label: "Данные скважин",
+    label: 'Данные скважин',
     leftIcon: assets.yandexDzen,
-    date: "26.02.2024 в 14:30",
+    date: '26.02.2024 в 14:30',
     rightIcon: IconKebab,
   },
   {
-    label: "Первый — этот вариант не выбрать",
+    label: 'Первый — этот вариант не выбрать',
     leftIcon: assets.yandexDzen,
-    date: "26.02.2024 в 14:30",
+    date: '26.02.2024 в 14:30',
     rightIcon: IconKebab,
   },
   {
-    label: "Статистика сейсморазведки за 2020 год",
+    label: 'Статистика сейсморазведки за 2020 год',
     leftIcon: assets.yandexDzen,
-    date: "26.02.2024 в 14:30",
+    date: '26.02.2024 в 14:30',
     rightIcon: IconKebab,
   },
   {
-    label: "Данные скважин",
+    label: 'Данные скважин',
     leftIcon: assets.yandexDzen,
-    date: "26.02.2024 в 14:30",
+    date: '26.02.2024 в 14:30',
     rightIcon: IconKebab,
   },
 ];
@@ -122,7 +120,25 @@ const Catalog = () => {
               />
             </div>
             <div className=" MixFlex MixFlex_direction_column MixFlex_gap_3xl">
-              <Grid cols={4} gap={"s"} className="cards">
+              <Grid
+                cols={4}
+                gap={'s'}
+                className="cards"
+                breakpoints={{
+                  0: {
+                    cols: 1,
+                    rowGap: 's',
+                  },
+                  480: {
+                    cols: 2,
+                    gap: 's',
+                  },
+                  800: {
+                    cols: 4,
+                    gap: 's',
+                  },
+                }}
+              >
                 <GridItem>
                   <Card
                     verticalSpace="m"
@@ -221,7 +237,25 @@ const Catalog = () => {
                 <Text as="h3" className="title-sm MixSpace_pB_xl">
                   Разделы
                 </Text>
-                <Grid cols={3} gap={"s"} className="cards">
+                <Grid
+                  cols={3}
+                  gap={'s'}
+                  className="cards"
+                  breakpoints={{
+                    0: {
+                      cols: 1,
+                      rowGap: 's',
+                    },
+                    680: {
+                      cols: 2,
+                      gap: 's',
+                    },
+                    800: {
+                      cols: 3,
+                      gap: 's',
+                    },
+                  }}
+                >
                   <GridItem>
                     <Card
                       verticalSpace="m"
@@ -241,7 +275,11 @@ const Catalog = () => {
                         Создавайте страницы с наборами диаграмм, таблиц и
                         фильтров
                       </Text>
-                      <img src={assets.catalogImg1} alt="catalog img" />
+                      <img
+                        className="w-full"
+                        src={assets.catalogImg1}
+                        alt="catalog img"
+                      />
                     </Card>
                   </GridItem>
                   <GridItem>
@@ -263,7 +301,11 @@ const Catalog = () => {
                         Создавайте страницы с наборами диаграмм, таблиц и
                         фильтров
                       </Text>
-                      <img src={assets.catalogImg2} alt="catalog img" />
+                      <img
+                        className="w-full"
+                        src={assets.catalogImg2}
+                        alt="catalog img"
+                      />
                     </Card>
                   </GridItem>
                   <GridItem>
@@ -285,7 +327,11 @@ const Catalog = () => {
                         Создавайте страницы с наборами диаграмм, таблиц и
                         фильтров
                       </Text>
-                      <img src={assets.catalogImg3} alt="catalog img" />
+                      <img
+                        className="w-full"
+                        src={assets.catalogImg3}
+                        alt="catalog img"
+                      />
                     </Card>
                   </GridItem>
 
@@ -308,7 +354,11 @@ const Catalog = () => {
                         Создавайте страницы с наборами диаграмм, таблиц и
                         фильтров
                       </Text>
-                      <img src={assets.catalogImg4} alt="catalog img" />
+                      <img
+                        className="w-full"
+                        src={assets.catalogImg4}
+                        alt="catalog img"
+                      />
                       <div className="Mi MixFlex MixFlex_align_center MixFlex_justify_space-between MixSpace_pT_s">
                         <Tag label="ГК Арктик" group={4} mode="info" size="s" />
                         <Avatar size="s" name="М Д" />
@@ -334,7 +384,11 @@ const Catalog = () => {
                         Создавайте страницы с наборами диаграмм, таблиц и
                         фильтров
                       </Text>
-                      <img src={assets.catalogImg5} alt="catalog img" />
+                      <img
+                        className="w-full"
+                        src={assets.catalogImg5}
+                        alt="catalog img"
+                      />
                       <div className="Mi MixFlex MixFlex_align_center MixFlex_justify_space-between MixSpace_pT_s">
                         <div className="MixFlex MixFlex_gap_xs">
                           <Tag
@@ -369,7 +423,11 @@ const Catalog = () => {
                         общественных отношений, которые складываются в системе
                         производства, распределения
                       </Text>
-                      <img src={assets.catalogImg6} alt="catalog img" />
+                      <img
+                        className="w-full"
+                        src={assets.catalogImg6}
+                        alt="catalog img"
+                      />
                       <div className="Mi MixFlex MixFlex_align_center MixFlex_justify_space-between MixSpace_pT_s">
                         <Tag label="Орион" group={8} mode="info" size="s" />
                         <Avatar size="s" name="М Д" />
@@ -403,7 +461,7 @@ const Catalog = () => {
                       <React.Fragment key={idx}>
                         <span
                           className={`line ${
-                            hoveredIndex === idx ? "hide" : ""
+                            hoveredIndex === idx ? 'hide' : ''
                           }`}
                         ></span>
                         <li
@@ -413,7 +471,7 @@ const Catalog = () => {
                         >
                           <div className="MixFlex MixFlex_align_center gap-4">
                             <img src={item.leftIcon} alt="" />
-                            <Text>{item.label}</Text>
+                            <Text className="hidden-text">{item.label}</Text>
                           </div>
                           <div className="MixFlex MixFlex_align_center gap-4">
                             <Text size="xs" view="secondary">

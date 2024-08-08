@@ -1,117 +1,117 @@
-import React, { useContext, useState } from "react";
-import "./dashboard.scss";
-import { Header } from "../../layouts/Header";
-import { NavbarLayout } from "../../components/Navbar";
-import { ShowNavContext } from "../../context/ShowNavContext";
-import CustomBreadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import { Text } from "@consta/uikit/Text";
-import { Button } from "@consta/uikit/Button";
-import { IconRevert } from "@consta/icons/IconRevert";
-import { ChoiceGroup } from "@consta/uikit/ChoiceGroup";
-import { IconAdd } from "@consta/icons/IconAdd";
-import { Grid, GridItem } from "@consta/uikit/Grid";
-import { Card } from "@consta/uikit/Card";
-import { DatePicker } from "@consta/uikit/DatePicker";
-import { Tabs } from "@consta/uikit/Tabs";
-import { Legend } from "@consta/widgets/Legend/Legend";
-import { CardHeader, StackedLineChart } from "../../components";
-import { Table } from "@consta/uikit/Table";
-import { Checkbox } from "@consta/uikit/Checkbox";
-import "../table/table.scss";
+import React, { useContext, useState } from 'react';
+import './dashboard.scss';
+import { Header } from '../../layouts/Header';
+import { NavbarLayout } from '../../components/Navbar';
+import { ShowNavContext } from '../../context/ShowNavContext';
+import CustomBreadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import { Text } from '@consta/uikit/Text';
+import { Button } from '@consta/uikit/Button';
+import { IconRevert } from '@consta/icons/IconRevert';
+import { ChoiceGroup } from '@consta/uikit/ChoiceGroup';
+import { IconAdd } from '@consta/icons/IconAdd';
+import { Grid, GridItem } from '@consta/uikit/Grid';
+import { Card } from '@consta/uikit/Card';
+import { DatePicker } from '@consta/uikit/DatePicker';
+import { Tabs } from '@consta/uikit/Tabs';
+import { Legend } from '@consta/widgets/Legend/Legend';
+import { CardHeader, StackedLineChart } from '../../components';
+import { Table } from '@consta/uikit/Table';
+import { Checkbox } from '@consta/uikit/Checkbox';
+import '../table/table.scss';
 const rows = [
   {
-    id: "1",
+    id: '1',
     name: <Checkbox size="s" label="101" />,
-    isOpen: "Зимнее",
-    year: "ГПН-Хантос",
-    reserves: "53.209028, 58.620724",
-    npv: "5 000",
-    npvTwo: "5 000",
+    isOpen: 'Зимнее',
+    year: 'ГПН-Хантос',
+    reserves: '53.209028, 58.620724',
+    npv: '5 000',
+    npvTwo: '5 000',
   },
   {
-    id: "2",
+    id: '2',
     name: <Checkbox size="s" label="101" />,
-    isOpen: "Зимнее",
-    year: "ГПН-Хантос",
-    reserves: "53.209028, 58.620724",
-    npv: "5 000",
-    npvTwo: "5 000",
+    isOpen: 'Зимнее',
+    year: 'ГПН-Хантос',
+    reserves: '53.209028, 58.620724',
+    npv: '5 000',
+    npvTwo: '5 000',
   },
   {
-    id: "3",
+    id: '3',
     name: <Checkbox size="s" label="101" />,
-    isOpen: "Зимнее",
-    year: "ГПН-Хантос",
-    reserves: "53.209028, 58.620724",
-    npv: "5 000",
-    npvTwo: "5 000",
+    isOpen: 'Зимнее',
+    year: 'ГПН-Хантос',
+    reserves: '53.209028, 58.620724',
+    npv: '5 000',
+    npvTwo: '5 000',
   },
   {
-    id: "4",
+    id: '4',
     name: <Checkbox size="s" label="101" />,
-    isOpen: "Зимнее",
-    year: "ГПН-Хантос",
-    reserves: "53.209028, 58.620724",
-    npv: "5 000",
-    npvTwo: "5 000",
+    isOpen: 'Зимнее',
+    year: 'ГПН-Хантос',
+    reserves: '53.209028, 58.620724',
+    npv: '5 000',
+    npvTwo: '5 000',
   },
   {
-    id: "5",
+    id: '5',
     name: <Checkbox size="s" label="101" />,
-    isOpen: "Зимнее",
-    year: "ГПН-Хантос",
-    reserves: "53.209028, 58.620724",
-    npv: "5 000",
-    npvTwo: "5 000",
+    isOpen: 'Зимнее',
+    year: 'ГПН-Хантос',
+    reserves: '53.209028, 58.620724',
+    npv: '5 000',
+    npvTwo: '5 000',
   },
 ];
 
 const columns = [
   {
-    title: "Месторождение",
+    title: 'Месторождение',
     name: <Checkbox size="s" label="Северное" />,
-    accessor: "name",
+    accessor: 'name',
   },
   {
-    title: "Год открытия",
-    accessor: "year",
+    title: 'Год открытия',
+    accessor: 'year',
   },
   {
-    title: "Тип ",
-    accessor: "isOpen",
+    title: 'Тип ',
+    accessor: 'isOpen',
   },
   {
-    title: "Добыча, млн.т.",
-    accessor: "npvTwo",
-    align: "right",
+    title: 'Добыча, млн.т.',
+    accessor: 'npvTwo',
+    align: 'right',
   },
   {
-    title: "ЗАПАСЫ, млн.т.",
-    accessor: "reserves",
-    align: "right",
+    title: 'ЗАПАСЫ, млн.т.',
+    accessor: 'reserves',
+    align: 'right',
   },
   {
-    title: "NPV (P50), млрд ₽",
-    accessor: "npv",
-    align: "right",
+    title: 'NPV (P50), млрд ₽',
+    accessor: 'npv',
+    align: 'right',
   },
 ];
 
 const pageLinks = [
   {
-    label: "Geoapp",
-    href: "#!",
+    label: 'Geoapp',
+    href: '#!',
   },
   {
-    label: "Дашборд",
-    href: "#!",
+    label: 'Дашборд',
+    href: '#!',
   },
   {
-    label: "Отчет",
+    label: 'Отчет',
   },
 ];
 
-const labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 const data = {
   email: [120, 132, 101, 134, 90, 230, 210],
@@ -121,9 +121,9 @@ const data = {
   searchEngine: [820, 932, 901, 934, 1290, 1330, 1320],
 };
 
-const items = ["Квартал", "Месяц", "Неделя"];
+const items = ['Квартал', 'Месяц', 'Неделя'];
 
-const tabItems = ["Информация", "Документы", "Статистика"];
+const tabItems = ['Информация', 'Документы', 'Статистика'];
 
 const getItemLabel = (label) => label;
 
@@ -172,7 +172,12 @@ const Report = () => {
                   size="xs"
                   view="secondary"
                 />
-                <DatePicker size="xs" value={value2} onChange={setValue2} />
+                <DatePicker
+                  className="media-hide"
+                  size="xs"
+                  value={value2}
+                  onChange={setValue2}
+                />
               </div>
 
               <Button
@@ -191,7 +196,7 @@ const Report = () => {
                 getItemLabel={getItemLabel}
               />
               <Card
-                className="MixFlex MixFlex_direction_column MixFlex_gap_s w-full"
+                className="MixFlex MixFlex_direction_column MixFlex_gap_s w-full chart-card"
                 horizontalSpace="m"
                 verticalSpace="m"
                 border={true}
@@ -201,16 +206,16 @@ const Report = () => {
                   direction="row"
                   items={[
                     {
-                      color: "#FF7479",
-                      text: "СПГ",
+                      color: '#FF7479',
+                      text: 'СПГ',
                     },
                     {
-                      color: "#32B4FF",
-                      text: "Газ",
+                      color: '#32B4FF',
+                      text: 'Газ',
                     },
                     {
-                      color: "#3B4195",
-                      text: "Нефть",
+                      color: '#3B4195',
+                      text: 'Нефть',
                     },
                   ]}
                   getItemLabel={(item) => item.text}

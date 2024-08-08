@@ -28,7 +28,7 @@ const Visualization3D = () => {
   }, [])
 
   return (
-    <div className="visualization-page">
+    <div className="visualization-page visualization-3d">
       <Header
         handleToggleNav={handleToggleNav}
         searchHeader={true}

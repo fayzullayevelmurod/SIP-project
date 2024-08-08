@@ -9,6 +9,7 @@
     overflow-y: auto;
     padding-bottom: 50px;
   }
+
   .sitatistik-card {
     .cw--StatsTitle-Cell {
       color: #00203399;
@@ -16,26 +17,31 @@
       font-weight: 400;
       line-height: 20px;
     }
+
     .cw--Stats-Value {
       font-size: 20px;
       font-weight: 600;
       line-height: 28px;
       color: #002033;
     }
+
     .cw--StatsRate {
       font-size: 12px;
       font-weight: 400;
       line-height: 20px;
     }
+
     .cw--Stats-Main {
       margin: 0;
     }
+
     .cw--Stats {
       display: flex;
       flex-direction: column;
       row-gap: 8px;
       position: relative;
     }
+
     .cw--StatsRate-Icon {
       background-size: 100%;
       width: 7px;
@@ -46,67 +52,83 @@
       border: none;
       background-repeat: no-repeat;
     }
+
     .cw--Stats-Rate_status_success {
       .cw--StatsRate-Icon {
         background-image: url(../../assets/icons/icon-top-right-succes.svg);
       }
     }
+
     .cw--Stats-Rate_status_warning {
       .cw--StatsRate-Icon {
         background-image: url(../../assets/icons/icon-top-right.svg);
       }
     }
   }
+
   .Card {
     border-radius: 12px;
     box-shadow: 0px 1px 1px 0px #0000000f;
     height: 100%;
   }
+
   .chart-box {
     overflow-x: auto;
+
     &::-webkit-scrollbar {
       height: 3px;
       width: 3px;
     }
   }
+
   #PolygonsExample {
     height: 876px;
   }
+
   .title-xs {
     font-size: 15px;
     font-weight: 600;
   }
+
   .cw--CoreBarChartTicks-Label_position_bottom,
   .cw--CoreBarChartTicks-Label_position_top {
     height: unset;
     max-height: unset;
   }
+
   .cw--CoreBarChart-Scroll {
     height: 380px;
   }
+
   .cw--CoreBarChart-AxisTicks_position_left {
     margin-top: 7px;
   }
+
   .list {
     width: 100%;
+
     .list-item {
       padding: 11px 4px;
       border-bottom: 1px solid #00203314;
       width: 100%;
+
       div {
         font-weight: 500;
       }
     }
   }
+
   .show-more__btn {
     width: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
+
     .Button-Label {
       flex-grow: 0;
     }
   }
+
   .Table {
     border: 1px solid #00416633;
     border-radius: 8px;
@@ -119,6 +141,7 @@
       }
     }
   }
+
   .TableHeader-Row {
     .TableCell-Wrapper_verticalAlign_center {
       color: #00203399;
@@ -128,6 +151,7 @@
       letter-spacing: 0.01em;
     }
   }
+
   .Checkbox-Label {
     margin-left: 24px;
   }

@@ -1,42 +1,42 @@
-import React, { useContext, useState } from "react";
-import "./dashboard.scss";
-import { Header } from "../../layouts/Header";
-import { NavbarLayout } from "../../components/Navbar";
-import { ShowNavContext } from "../../context/ShowNavContext";
-import CustomBreadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import { Text } from "@consta/uikit/Text";
-import { Button } from "@consta/uikit/Button";
-import { IconRevert } from "@consta/icons/IconRevert";
-import { ChoiceGroup } from "@consta/uikit/ChoiceGroup";
-import { IconAdd } from "@consta/icons/IconAdd";
-import { Grid, GridItem } from "@consta/uikit/Grid";
-import { Card } from "@consta/uikit/Card";
-import { Stats } from "@consta/widgets/Stats";
-import assets from "../../assets";
-import { IconWellBlue } from "@consta/icons/IconWellBlue";
-import { DatePicker } from "@consta/uikit/DatePicker";
+import React, { useContext, useState } from 'react';
+import './dashboard.scss';
+import { Header } from '../../layouts/Header';
+import { NavbarLayout } from '../../components/Navbar';
+import { ShowNavContext } from '../../context/ShowNavContext';
+import CustomBreadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import { Text } from '@consta/uikit/Text';
+import { Button } from '@consta/uikit/Button';
+import { IconRevert } from '@consta/icons/IconRevert';
+import { ChoiceGroup } from '@consta/uikit/ChoiceGroup';
+import { IconAdd } from '@consta/icons/IconAdd';
+import { Grid, GridItem } from '@consta/uikit/Grid';
+import { Card } from '@consta/uikit/Card';
+import { Stats } from '@consta/widgets/Stats';
+import assets from '../../assets';
+import { IconWellBlue } from '@consta/icons/IconWellBlue';
+import { DatePicker } from '@consta/uikit/DatePicker';
 
 import {
   CardHeader,
   CustomBarChart,
   PolygonsExample,
   StackedLineChart,
-} from "../../components";
-import { Legend } from "@consta/widgets/Legend/Legend";
-import { BarChart } from "@consta/widgets/BarChart";
-import { IconTopRight } from "@consta/icons/IconTopRight";
+} from '../../components';
+import { Legend } from '@consta/widgets/Legend/Legend';
+import { BarChart } from '@consta/widgets/BarChart';
+import { IconTopRight } from '@consta/icons/IconTopRight';
 
 const pageLinks = [
   {
-    label: "Geoapp",
-    href: "#!",
+    label: 'Geoapp',
+    href: '#!',
   },
   {
-    label: "Дашборд",
-    href: "#!",
+    label: 'Дашборд',
+    href: '#!',
   },
   {
-    label: "Сводная",
+    label: 'Сводная',
   },
 ];
 
@@ -48,29 +48,29 @@ const data = {
   searchEngine: [820, 932, 901, 934, 1290, 1330, 1320],
 };
 
-const labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-const items = ["Квартал", "Месяц", "Неделя"];
+const items = ['Квартал', 'Месяц', 'Неделя'];
 
 const colors = [
-  "var(--color-bg-normal)",
-  "var(--color-bg-alert)",
-  "var(--color-bg-warning)",
+  'var(--color-bg-normal)',
+  'var(--color-bg-alert)',
+  'var(--color-bg-warning)',
 ];
 
 const groupExampleData = {
   colors,
   groups: [
     {
-      groupName: "первая группа",
+      groupName: 'первая группа',
       values: [410, 115],
     },
     {
-      groupName: "вторая группа",
+      groupName: 'вторая группа',
       values: [650, 210, 80],
     },
     {
-      groupName: "третья группа",
+      groupName: 'третья группа',
       values: [75],
     },
   ],
@@ -80,27 +80,27 @@ const groupExampleData2 = {
   colors,
   groups: [
     {
-      groupName: "Питерское",
+      groupName: 'Питерское',
       values: [410],
     },
     {
-      groupName: "Уфимское",
+      groupName: 'Уфимское',
       values: [650],
     },
     {
-      groupName: "Московское",
+      groupName: 'Московское',
       values: [700],
     },
     {
-      groupName: "Казанское",
+      groupName: 'Казанское',
       values: [550],
     },
     {
-      groupName: "Орское",
+      groupName: 'Орское',
       values: [400],
     },
     {
-      groupName: "Ямалское",
+      groupName: 'Ямалское',
       values: [500],
     },
   ],
@@ -108,46 +108,46 @@ const groupExampleData2 = {
 
 const listItems = [
   {
-    label: "Скважина 1",
+    label: 'Скважина 1',
     leftIcon: <IconWellBlue />,
     id: 1,
-    rightText: "ХМАО / Зимнее",
+    rightText: 'ХМАО / Зимнее',
   },
   {
-    label: "Скважина 2",
+    label: 'Скважина 2',
     id: 2,
     leftIcon: <IconWellBlue />,
-    rightText: "ХМАО / Зимнее",
+    rightText: 'ХМАО / Зимнее',
   },
   {
-    label: "Скважина 3",
+    label: 'Скважина 3',
     id: 3,
     leftIcon: <IconWellBlue />,
-    rightText: "ХМАО / Зимнее",
+    rightText: 'ХМАО / Зимнее',
   },
   {
-    label: "Скважина 1",
+    label: 'Скважина 1',
     leftIcon: <IconWellBlue />,
     id: 4,
-    rightText: "ХМАО / Зимнее",
+    rightText: 'ХМАО / Зимнее',
   },
   {
-    label: "Скважина 2",
+    label: 'Скважина 2',
     id: 5,
     leftIcon: <IconWellBlue />,
-    rightText: "ХМАО / Зимнее",
+    rightText: 'ХМАО / Зимнее',
   },
   {
-    label: "Скважина 3",
+    label: 'Скважина 3',
     id: 6,
     leftIcon: <IconWellBlue />,
-    rightText: "ХМАО / Зимнее",
+    rightText: 'ХМАО / Зимнее',
   },
   {
-    label: "Скважина 3",
+    label: 'Скважина 3',
     id: 7,
     leftIcon: <IconWellBlue />,
-    rightText: "ХМАО / Зимнее",
+    rightText: 'ХМАО / Зимнее',
   },
 ];
 
@@ -195,7 +195,12 @@ const Dashboard = () => {
                   size="xs"
                   view="secondary"
                 />
-                <DatePicker size="xs" value={value2} onChange={setValue2} />
+                <DatePicker
+                  className="media-hide"
+                  size="xs"
+                  value={value2}
+                  onChange={setValue2}
+                />
               </div>
 
               <Button
@@ -206,7 +211,24 @@ const Dashboard = () => {
               />
             </div>
           </div>
-          <Grid cols={4} gap="xl">
+          <Grid
+            cols={4}
+            gap="xl"
+            breakpoints={{
+              0: {
+                cols: 1,
+                gap: 'm',
+              },
+              650: {
+                cols: 2,
+                gap: 'm',
+              },
+              1300: {
+                cols: 4,
+                gap: '2xl',
+              },
+            }}
+          >
             <GridItem>
               <Card
                 className="MixFlex MixFlex_justify_space-between MixFlex_align_center sitatistik-card"
@@ -276,10 +298,23 @@ const Dashboard = () => {
               </Card>
             </GridItem>
           </Grid>
-          <Grid cols={2} gap="xl">
+          <Grid
+            cols={2}
+            gap="xl"
+            breakpoints={{
+              0: {
+                cols: 1,
+                gap: 'm',
+              },
+              1200: {
+                cols: 2,
+                gap: 'xl',
+              },
+            }}
+          >
             <GridItem>
               <Card
-                className="MixFlex MixFlex_direction_column MixFlex_gap_s"
+                className="MixFlex MixFlex_direction_column MixFlex_gap_s media-height"
                 horizontalSpace="m"
                 verticalSpace="m"
                 border={true}
@@ -290,7 +325,7 @@ const Dashboard = () => {
             </GridItem>
             <GridItem>
               <Card
-                className="MixFlex MixFlex_direction_column MixFlex_gap_s"
+                className="MixFlex MixFlex_direction_column MixFlex_gap_s chart-card"
                 horizontalSpace="m"
                 verticalSpace="m"
                 border={true}
@@ -300,20 +335,20 @@ const Dashboard = () => {
                   direction="row"
                   items={[
                     {
-                      color: "var(--color-bg-caution)",
-                      text: "Нефть",
+                      color: 'var(--color-bg-caution)',
+                      text: 'Нефть',
                     },
                     {
-                      color: "var(--color-bg-warning)",
-                      text: "Газ",
+                      color: 'var(--color-bg-warning)',
+                      text: 'Газ',
                     },
                     {
-                      color: "var(--color-bg-normal)",
-                      text: "Железо",
+                      color: 'var(--color-bg-normal)',
+                      text: 'Железо',
                     },
                     {
-                      color: "var(--color-bg-success)",
-                      text: "Аллюминий",
+                      color: 'var(--color-bg-success)',
+                      text: 'Аллюминий',
                     },
                   ]}
                   getItemLabel={(item) => item.text}
@@ -325,10 +360,23 @@ const Dashboard = () => {
               </Card>
             </GridItem>
           </Grid>
-          <Grid cols={3} gap="xl">
+          <Grid
+            cols={3}
+            gap="xl"
+            breakpoints={{
+              0: {
+                cols: 1,
+                gap: 'm',
+              },
+              1300: {
+                cols: 3,
+                gap: 'xl',
+              },
+            }}
+          >
             <GridItem>
               <Card
-                className="MixFlex MixFlex_direction_column MixFlex_gap_s"
+                className="MixFlex MixFlex_direction_column MixFlex_gap_s media-height"
                 horizontalSpace="m"
                 verticalSpace="m"
                 border={true}
@@ -346,7 +394,7 @@ const Dashboard = () => {
             </GridItem>
             <GridItem>
               <Card
-                className="MixFlex MixFlex_direction_column MixFlex_gap_s"
+                className="MixFlex MixFlex_direction_column MixFlex_gap_s media-height"
                 horizontalSpace="m"
                 verticalSpace="m"
                 border={true}
