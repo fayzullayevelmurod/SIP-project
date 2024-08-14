@@ -34,6 +34,8 @@ import { IconQuestion } from "@consta/icons/IconQuestion";
 import { IconSendMessage } from "@consta/icons/IconSendMessage";
 import { Select } from "@consta/uikit/Select";
 import { DragNDropField } from "@consta/uikit/DragNDropField";
+import { Checkbox } from "@consta/uikit/Checkbox";
+
 
 const pageLinks = [
   {
@@ -395,6 +397,10 @@ const ProjectNumbers = () => {
                 />
               </div>
               <DropdownTable />
+
+							<div>
+
+							</div>
             </div>
           )}
           {tabValue == tabItems[2] && (
