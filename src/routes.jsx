@@ -6,6 +6,7 @@ import {
   Dashboard,
   Directory,
   FileManager,
+  FileManagerImport,
   GeomodelingDashboard,
   Interpretation,
   Intro,
@@ -53,4 +54,5 @@ const routes = [
   { path: "projects-number", element: <ProjectNumbers /> },
   { path: "map", element: <Map /> },
   { path: "geomodeling-dashboard", element: <GeomodelingDashboard /> },
+  { path: "file-manager-import", element: <FileManagerImport /> },
 ];

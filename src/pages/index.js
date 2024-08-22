@@ -26,3 +26,4 @@ export { default as Projects } from "./projects/Projects";
 export { default as ProjectNumbers } from "./projects/ProjectNumbers";
 export { default as Map } from "./map/Map";
 export {default as GeomodelingDashboard} from './geomodeling-dashboard/GeomodelingDashboard';
+export { default as FileManagerImport } from './file-manager/FileManagerImport';

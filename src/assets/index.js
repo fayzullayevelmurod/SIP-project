@@ -57,6 +57,8 @@ import layout from './icons/layout.svg';
 import flow from './icons/flow.svg';
 import zoom from './icons/zoom.svg'
 import zoomMinus from './icons/zoom-minus.svg'
+import document from './icons/document.svg';
+import folderZip from './icons/folder-zip.svg';
 
 
 export default {
@@ -119,4 +121,6 @@ export default {
   flow,
   zoom,
   zoomMinus,
+	document,
+	folderZip
 };

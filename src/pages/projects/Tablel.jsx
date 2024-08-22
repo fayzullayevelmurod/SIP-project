@@ -1,204 +1,253 @@
-import { AnimateIconSwitcherProvider } from "@consta/icons/AnimateIconSwitcherProvider";
-import { IconArrowRight } from "@consta/icons/IconArrowRight";
-import { withAnimateSwitcherHOC } from "@consta/icons/withAnimateSwitcherHOC";
+import React, { useState } from "react";
 import { Checkbox } from "@consta/uikit/Checkbox";
-import { Button } from "@consta/uikit/Button";
-import { useMutableRef } from "@consta/uikit/useMutableRef";
-import React, { useCallback, useMemo, useState } from "react";
+import { IconArrowRight } from "@consta/icons/IconArrowRight";
+import { IconArrowDown } from "@consta/icons/IconArrowDown";
 
-import { DataCell } from "@consta/table/DataCell";
-import { Table } from "@consta/table/Table";
-
-const range = (count) => {
-  return Array.from({ length: count }, (_, i) => i);
-};
-
-const IconArrow = withAnimateSwitcherHOC({
-  startIcon: IconArrowRight,
-  startDirection: 0,
-  endDirection: 90,
-});
-
-const getDataCell = (idx) => {
-  const parrent = Math.floor(idx / 10) * 10;
-
-  return {
-    idx,
-    col1: `Данные 1 - ${idx}`,
-    col2: `Данные 2 - ${idx}`,
-    col3: `Данные 3 - ${idx}`,
-    parrent: parrent === idx ? undefined : parrent,
-    level: parrent === idx ? 0 : 1,
-    checked: false,
-  };
-};
-
-const data = range(100).map(getDataCell);
-
-const DataCellCol1 = (props) => {
-  const {
-    row: { col1, parrent, idx, level },
-    opened,
-    toggle,
-  } = props;
-
-  return (
-    <AnimateIconSwitcherProvider active={opened}>
-      <DataCell
-        level={level}
-        control={
-          typeof parrent === "undefined" ? (
-            <Button
-              size="s"
-              view="clear"
-              iconLeft={IconArrow}
-              onlyIcon
-              onClick={() => toggle(idx)}
-            />
-          ) : undefined // Agar `parrent` defined bo'lmagan bo'lsa, faqat ikonkani ko'rsatish
-        }
-      >
-        {col1}
-      </DataCell>
-    </AnimateIconSwitcherProvider>
-  );
-};
-
-export const DropdownTable = () => {
-  const [openedList, setOpenedList] = useState([]);
-  const [checkedItems, setCheckedItems] = useState({});
-
-  const openedListRef = useMutableRef(openedList);
-
-  const rows = useMemo(() => {
-    return data.filter(
-      (dataItem) =>
-        dataItem.parrent === undefined ||
-        openedList.findIndex(
-          (openedListItem) => openedListItem === dataItem.parrent
-        ) !== -1
-    );
-  }, [openedList]);
-
-  const toggle = useCallback((idx) => {
-    setOpenedList((state) => {
-      const open = state.findIndex((value) => value === idx) !== -1;
-      if (open) {
-        return state.filter((value) => value !== idx);
-      }
-      return [...state, idx];
-    });
-  }, []);
-
-  const onCheck = useCallback((idx) => {
-    setCheckedItems((state) => ({
-      ...state,
-      [idx]: !state[idx],
-    }));
-  }, []);
-
-  const renderCellCol1 = useCallback(
-    (props) => (
-      <DataCellCol1
-        {...props}
-        toggle={toggle}
-        opened={
-          openedListRef.current.findIndex((item) => item === props.row.idx) !==
-          -1
-        }
-      />
-    ),
-    []
-  );
-
-  const renderCheckboxCell = useCallback(
-    (props) => (
-      <Checkbox
-        checked={!!checkedItems[props.row.idx]}
-        onChange={() => onCheck(props.row.idx)}
-      />
-    ),
-    [checkedItems]
-  );
-
-  // const columns = useMemo(
-  //   () => [
-  //     {
-  //       title: "",
-  //       accessor: "checkbox",
-  //       renderCell: renderCheckboxCell,
-  //       width: 50, // Checkbox ustuni kengligi
-  //     },
-  //     {
-  //       title: "Колонка - 1",
-  //       accessor: "col1",
-  //       renderCell: renderCellCol1,
-  //     },
-  //     {
-  //       title: "Колонка - 2",
-  //       accessor: "col2",
-  //     },
-  //     {
-  //       title: "Колонка - 3",
-  //       accessor: "col3",
-  //     },
-  //   ],
-  //   [renderCellCol1, renderCheckboxCell]
-  // );
-  // Barcha elementlarni belgilash uchun yangi state
-  const [selectAll, setSelectAll] = useState(false);
-
-  // handleSelectAll funksiyasi
-  const handleSelectAll = useCallback(() => {
-    setSelectAll((prev) => {
-      const newSelectAll = !prev;
-      if (newSelectAll) {
-        // Barcha checkboxlarni belgilash
-        setOpenedList(data.map((item) => item.idx));
-      } else {
-        // Barcha checkboxlarni bekor qilish
-        setOpenedList([]);
-      }
-      return newSelectAll;
-    });
-  }, [data]);
-  const columns = useMemo(
-    () => [
+const initialData = [
+  {
+    id: 1,
+    name: "Сейсмика",
+    duration: 126,
+    specialists: 1,
+    cost: 2990,
+    total: 29900,
+    expandable: true,
+    selected: false,
+    subRows: [
       {
-        title: <Checkbox checked={selectAll} onChange={handleSelectAll} />,
-        accessor: "checkbox",
-        renderCell: (props) => (
-          <Checkbox
-            checked={openedListRef.current.includes(props.row.idx)}
-            onChange={() => toggle(props.row.idx)}
-          />
-        ),
+        id: 8,
+        name: "Подготовка территории",
+        duration: 50,
+        specialists: 2,
+        cost: 1990,
+        total: 9950,
+        selected: false,
       },
       {
-        title: "Колонка - 1",
-        accessor: "col1",
-        renderCell: renderCellCol1, // Dropdown uchun cell
-      },
-      {
-        title: "Колонка - 2",
-        accessor: "col2",
-      },
-      {
-        title: "Колонка - 3",
-        accessor: "col3",
+        id: 9,
+        name: "Сбор данных",
+        duration: 40,
+        specialists: 3,
+        cost: 2390,
+        total: 7170,
+        selected: false,
       },
     ],
-    [selectAll, handleSelectAll, toggle, renderCellCol1]
-  );
+  },
+  {
+    id: 2,
+    name: "Создание микрочипов",
+    duration: 126,
+    specialists: 1,
+    cost: 2990,
+    total: 29900,
+    expandable: false,
+    selected: false,
+  },
+  {
+    id: 3,
+    name: "Анализ местности",
+    duration: 126,
+    specialists: 1,
+    cost: 2990,
+    total: 29900,
+    expandable: false,
+    selected: false,
+  },
+  {
+    id: 4,
+    name: "Исследование месторождения",
+    duration: 126,
+    specialists: 1,
+    cost: 2990,
+    total: 29900,
+    expandable: false,
+    selected: false,
+  },
+  {
+    id: 5,
+    name: "Проведение экспериментов",
+    duration: 126,
+    specialists: 1,
+    cost: 2990,
+    total: 29900,
+    expandable: false,
+    selected: false,
+  },
+  {
+    id: 6,
+    name: "Подготовка результата",
+    duration: 126,
+    specialists: 1,
+    cost: 2990,
+    total: 29900,
+    expandable: false,
+    selected: false,
+  },
+  {
+    id: 7,
+    name: "Геология",
+    duration: 126,
+    specialists: 1,
+    cost: 2990,
+    total: 29900,
+    expandable: true,
+    selected: false,
+    subRows: [
+      {
+        id: 10,
+        name: "Бурение",
+        duration: 126,
+        specialists: 1,
+        cost: 2990,
+        total: 29900,
+        selected: false,
+      },
+    ],
+  },
+];
+
+const DropdownTable = () => {
+  const [data, setData] = useState(initialData);
+  const [expandedRows, setExpandedRows] = useState([]);
+
+  const handleCheckboxChange = (id, parentId = null) => {
+    const newData = data.map((row) => {
+      if (row.id === id) {
+        // Toggle parent checkbox and all its subRows
+        if (row.subRows) {
+          const newSelected = !row.selected;
+          return {
+            ...row,
+            selected: newSelected,
+            subRows: row.subRows.map((subRow) => ({
+              ...subRow,
+              selected: newSelected,
+            })),
+          };
+        } else {
+          return { ...row, selected: !row.selected };
+        }
+      } else if (row.id === parentId) {
+        // Toggle child checkbox and update parent checkbox's state
+        const newSubRows = row.subRows.map((subRow) =>
+          subRow.id === id ? { ...subRow, selected: !subRow.selected } : subRow
+        );
+        const allChecked = newSubRows.every((subRow) => subRow.selected);
+        const someChecked = newSubRows.some((subRow) => subRow.selected);
+        return {
+          ...row,
+          selected: allChecked,
+          subRows: newSubRows,
+          intermediate: !allChecked && someChecked,
+        };
+      } else {
+        return row;
+      }
+    });
+    setData(newData);
+  };
+
+  const handleRowClick = (id) => {
+    if (expandedRows.includes(id)) {
+      setExpandedRows(expandedRows.filter((rowId) => rowId !== id));
+    } else {
+      setExpandedRows([...expandedRows, id]);
+    }
+  };
+
+  const [allSelected, setAllSelected] = useState(false);
+
+  const handleAllCheckboxChange = () => {
+    const newSelectedState = !allSelected;
+    setAllSelected(newSelectedState);
+
+    const newData = data.map((row) => ({
+      ...row,
+      selected: newSelectedState,
+      subRows: row.subRows?.map((subRow) => ({
+        ...subRow,
+        selected: newSelectedState,
+      })),
+    }));
+    setData(newData);
+  };
 
   return (
-    <Table
-      style={{ maxHeight: 400 }}
-      rows={rows}
-      columns={columns}
-      stickyHeader
-      virtualScroll
-    />
+    <table className="custom-table">
+      <thead>
+        <tr>
+          <th>
+            <Checkbox
+              size="m"
+              checked={allSelected}
+              onChange={handleAllCheckboxChange}
+            />
+          </th>
+          <th>Блок работ</th>
+          <th>Срок работ, дни</th>
+          <th>Кол-во специалистов</th>
+          <th>Стоимость</th>
+          <th>Итого</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((row) => (
+          <React.Fragment key={row.id}>
+            <tr>
+              <td>
+                <Checkbox
+                  size="m"
+                  checked={row.selected || false}
+                  intermediate={
+                    row.intermediate ||
+                    (row.subRows?.every((subRow) => subRow.selected) &&
+                      row.selected)
+                  }
+                  onChange={() => handleCheckboxChange(row.id)}
+                />
+              </td>
+              <td>
+                <div className="parent-row">
+                  {row.expandable && (
+                    <button onClick={() => handleRowClick(row.id)}>
+                      {expandedRows.includes(row.id) ? (
+                        <IconArrowDown />
+                      ) : (
+                        <IconArrowRight />
+                      )}
+                    </button>
+                  )}
+                  {row.name}
+                </div>
+              </td>
+              <td>{row.duration}</td>
+              <td>{row.specialists}</td>
+              <td>{row.cost} руб/ч</td>
+              <td>{row.total} руб/ч</td>
+            </tr>
+            {expandedRows.includes(row.id) &&
+              row.subRows &&
+              row.subRows.map((subRow) => (
+                <tr key={subRow.id}>
+                  <td>
+                    <Checkbox
+                      size="m"
+                      checked={subRow.selected || false}
+                      onChange={() => handleCheckboxChange(subRow.id, row.id)}
+                    />
+                  </td>
+                  <td style={{ paddingLeft: "60px" }}>{subRow.name}</td>
+                  <td>{subRow.duration}</td>
+                  <td>{subRow.specialists}</td>
+                  <td>{subRow.cost} руб/ч</td>
+                  <td>{subRow.total} руб/ч</td>
+                </tr>
+              ))}
+          </React.Fragment>
+        ))}
+      </tbody>
+    </table>
   );
 };
 

@@ -173,7 +173,7 @@ const FileManager = () => {
             <Text as="h1" view="primary">
               Мои обьекты
             </Text>
-            <div className="sidebar-header__btns">
+            <div className="sidebar-header__btns MixFlex MixFlex_gap_2xs">
               <Button size="xs" view="clear" iconLeft={IconSearchStroked} />
               <Button size="xs" view="clear" iconLeft={IconSortDownCenter} />
             </div>
@@ -187,7 +187,7 @@ const FileManager = () => {
             />
             <Button
               size="xs"
-              iconLeft={IconArrowPrevious}
+              iconLeft={IconKernStroked}
               label="Загрузить из БД"
               view="secondary"
             />
@@ -267,19 +267,7 @@ const FileManager = () => {
               Скважины
             </Text>
             <div className="btns">
-              <div>
-                <Button
-                  size="xs"
-                  view="clear"
-                  iconLeft={IconArrowNext}
-                  onClick={() => handleOpenSidebar("left")}
-                />
-                <Button
-                  size="xs"
-                  view="clear"
-                  iconLeft={IconArrowPrevious}
-                  onClick={() => handleOpenSidebar("right")}
-                />
+              <div className="MixFlex MixFlex_gap_2xs">
                 <Button size="xs" view="clear" iconLeft={IconSearchStroked} />
                 <Button size="xs" view="clear" iconLeft={IconSortDownCenter} />
               </div>

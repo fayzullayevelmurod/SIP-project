@@ -35,7 +35,7 @@ import { IconSendMessage } from "@consta/icons/IconSendMessage";
 import { Select } from "@consta/uikit/Select";
 import { DragNDropField } from "@consta/uikit/DragNDropField";
 import { Checkbox } from "@consta/uikit/Checkbox";
-
+import { IconTrash } from "@consta/icons/IconTrash";
 
 const pageLinks = [
   {
@@ -398,9 +398,21 @@ const ProjectNumbers = () => {
               </div>
               <DropdownTable />
 
-							<div>
+              <table></table>
 
-							</div>
+              <div className="MixFlex_align_center MixFlex MixFlex_gap_xs bottom-panel__number">
+                <Checkbox size="m" label="Выбрано: 2" />
+                <div className="bottom-line"></div>
+                <div className="MixFlex MixFlex_gap_xs">
+                  <Button
+                    view="clear"
+                    size="xs"
+                    iconLeft={IconBookmarkStroked}
+                  />
+                  <Button view="clear" size="xs" iconLeft={IconShare} />
+                  <Button view="clear" size="xs" iconLeft={IconTrash} />
+                </div>
+              </div>
             </div>
           )}
           {tabValue == tabItems[2] && (
@@ -759,7 +771,7 @@ const ProjectNumbers = () => {
                   {({ openFileDialog }) => (
                     <>
                       <Text size="xs" view="secondary">
-                        Перетащите файлы или {" "}
+                        Перетащите файлы или{" "}
                         <Text
                           as="span"
                           size="xs"
