@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import {
+  Basket,
   Catalog,
   ChatGPT,
   CorrCircuit,
@@ -55,4 +56,5 @@ const routes = [
   { path: "map", element: <Map /> },
   { path: "geomodeling-dashboard", element: <GeomodelingDashboard /> },
   { path: "file-manager-import", element: <FileManagerImport /> },
+  { path: "basket", element: <Basket /> },
 ];

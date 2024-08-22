@@ -43,6 +43,7 @@ const Header = (props) => {
     noFolderIcon,
     mediaHamburgerIcon = false,
     numeredIcon = false,
+    date = false,
   } = props;
   const { handleToggleNav } = useContext(ShowNavContext);
 
@@ -99,6 +100,20 @@ const Header = (props) => {
             />
             <p>Geoapp</p>
           </Link>
+        )}
+        {date && (
+          <>
+            {pagesLink?.length > 0 && (
+              <>
+                <div className="line"></div>
+                <CustomBreadcrumbs items={pagesLink} />
+              </>
+            )}
+            <Badge size="xs" status="system" label="Черновик" />
+            <Text size="xs" view="secondary">
+              20.01.2023
+            </Text>
+          </>
         )}
         {searchBox ? (
           <div className={`search-box`}>

@@ -121,11 +121,20 @@
 
 // file-manager__import-page
 .file-manager__import-page {
+	.bottom-btn {
+		border-radius: 8px;
+		width: 100%;
+	}
 
 	.left-sidebar,
 	.middle-sidebar {
 		min-width: 360px;
 		max-width: 360px;
+	}
+	.middle-sidebar {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	.right-sidebar {
@@ -143,6 +152,59 @@
 		.Badge_size_xs {
 			width: 12px;
 			height: 12px;
+		}
+	}
+
+	.drop-list {
+		padding: 12px 0;
+
+		&__tr {
+			display: flex;
+			align-items: start;
+			justify-content: space-between;
+
+			&.active {
+				background: #00426912;
+				border-radius: 8px;
+
+				.right-box {
+					border-bottom: none;
+				}
+			}
+		}
+
+		.left-box {
+			width: 32px;
+			height: 32px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		.right-box {
+			border-bottom: 1px solid #D0D8DF;
+			width: 100%;
+			margin-left: 4px;
+			padding: 0 4px 8px 0;
+			margin-bottom: 4px;
+		}
+
+		.right-box__top {
+			height: 32px;
+			display: flex;
+			align-items: center;
+			padding: 4px 4px 0 0;
+		}
+
+		.right-box__bottom {
+			padding: 4px 0;
+		}
+
+		.sub-menu {
+			li {
+				padding: 7px 4px 7px 0;
+			}
 		}
 	}
 }

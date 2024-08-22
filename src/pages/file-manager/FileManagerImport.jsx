@@ -16,19 +16,19 @@ import { IconTrash } from "@consta/icons/IconTrash";
 import { IconSettings } from "@consta/icons/IconSettings";
 import { IconKebab } from "@consta/icons/IconKebab";
 import { ChoiceGroup } from "@consta/uikit/ChoiceGroup";
+import { IconWells } from "@consta/icons/IconWells";
+import { IconArrowDown } from "@consta/icons/IconArrowDown";
 import { IconArrowRight } from "@consta/icons/IconArrowRight";
+import { IconWellBlue } from "@consta/icons/IconWellBlue";
+import { Icon3DMap } from "@consta/icons/Icon3DMap";
+
 const pagesLink = [
-  {
-    label: "Менеджер данных",
-    href: "file-manager",
-  },
-  {
-    label: "Импорт файлов",
-    href: "/#!",
-  },
+  { label: "Менеджер данных", href: "file-manager" },
+  { label: "Импорт файлов", href: "/#!" },
 ];
 const items = ["Все 37", "Успешно 26", "Ошибка 11"];
 const items2 = ["Все 20", "С маппингом 6", "Без маппинга 12"];
+
 const getItemLabel = (label) => label;
 const getItemLabel2 = (label) => label;
 const choiceGroupItems = ["Файл", "Планшет", "Карта"];
@@ -37,15 +37,18 @@ const data = [
   {
     title: "Скважина",
     coordinates: "54.736687, 55.986100",
-    distance: "200 м.",
+    distance: "200",
     subtitle: "w202",
+    logo: <IconWellBlue size="xs" />,
     details: [
       { name: "Гис", value: "2" },
       { name: "Ригис", value: "4" },
       { name: "Керн", value: "4" },
-      { name: "Маркеры", value: "4" },
+    ],
+    submenu: [
       { name: "Координаты", value: "Файл.dev" },
       { name: "Геометрия", value: "W203" },
+      { name: "Координаты", value: "W203" },
       { name: "Исследования", value: "W203" },
       { name: "Маркеры", value: "W203" },
     ],
@@ -53,12 +56,134 @@ const data = [
   {
     title: "Скважина",
     coordinates: "54.736687, 55.986100",
-    distance: "200 м.",
-    subtitle: "w203",
+    distance: "200",
+    subtitle: "w202",
+    logo: <Icon3DMap size="xs" />,
     details: [
       { name: "Гис", value: "2" },
       { name: "Ригис", value: "4" },
-      { name: "Маркеры", value: "4" },
+      { name: "Керн", value: "4" },
+    ],
+    submenu: [
+      { name: "Координаты", value: "Файл.dev" },
+      { name: "Геометрия", value: "W203" },
+      { name: "Координаты", value: "W203" },
+      { name: "Исследования", value: "W203" },
+      { name: "Маркеры", value: "W203" },
+    ],
+  },
+  {
+    title: "Скважина",
+    coordinates: "54.736687, 55.986100",
+    distance: "200",
+    subtitle: "w202",
+    logo: <IconWellBlue size="xs" />,
+    details: [
+      { name: "Гис", value: "2" },
+      { name: "Ригис", value: "4" },
+      { name: "Керн", value: "4" },
+    ],
+    submenu: [
+      { name: "Координаты", value: "Файл.dev" },
+      { name: "Геометрия", value: "W203" },
+      { name: "Координаты", value: "W203" },
+      { name: "Исследования", value: "W203" },
+      { name: "Маркеры", value: "W203" },
+    ],
+  },
+  {
+    title: "Скважина",
+    coordinates: "54.736687, 55.986100",
+    distance: "200",
+    subtitle: "w202",
+    logo: <Checkbox size="xs" checked />,
+    details: [
+      { name: "Гис", value: "2" },
+      { name: "Ригис", value: "4" },
+      { name: "Керн", value: "4" },
+    ],
+    submenu: [
+      { name: "Координаты", value: "Файл.dev" },
+      { name: "Геометрия", value: "W203" },
+      { name: "Координаты", value: "W203" },
+      { name: "Исследования", value: "W203" },
+      { name: "Маркеры", value: "W203" },
+    ],
+  },
+  {
+    title: "Скважина",
+    coordinates: "54.736687, 55.986100",
+    distance: "200",
+    subtitle: "w202",
+    logo: <IconWellBlue size="xs" />,
+    details: [
+      { name: "Гис", value: "2" },
+      { name: "Ригис", value: "4" },
+      { name: "Керн", value: "4" },
+    ],
+    submenu: [
+      { name: "Координаты", value: "Файл.dev" },
+      { name: "Геометрия", value: "W203" },
+      { name: "Координаты", value: "W203" },
+      { name: "Исследования", value: "W203" },
+      { name: "Маркеры", value: "W203" },
+    ],
+  },
+  {
+    title: "Скважина",
+    coordinates: "54.736687, 55.986100",
+    distance: "200",
+    subtitle: "w202",
+    logo: <Checkbox size="xs" checked />,
+    details: [
+      { name: "Гис", value: "2" },
+      { name: "Ригис", value: "4" },
+      { name: "Керн", value: "4" },
+    ],
+    submenu: [
+      { name: "Координаты", value: "Файл.dev" },
+      { name: "Геометрия", value: "W203" },
+      { name: "Координаты", value: "W203" },
+      { name: "Исследования", value: "W203" },
+      { name: "Маркеры", value: "W203" },
+    ],
+  },
+  {
+    title: "Скважина",
+    coordinates: "54.736687, 55.986100",
+    distance: "200",
+    subtitle: "w202",
+    logo: <Checkbox size="xs" checked />,
+    details: [
+      { name: "Гис", value: "2" },
+      { name: "Ригис", value: "4" },
+      { name: "Керн", value: "4" },
+    ],
+    submenu: [
+      { name: "Координаты", value: "Файл.dev" },
+      { name: "Геометрия", value: "W203" },
+      { name: "Координаты", value: "W203" },
+      { name: "Исследования", value: "W203" },
+      { name: "Маркеры", value: "W203" },
+    ],
+  },
+  {
+    title: "Скважина",
+    coordinates: "54.736687, 55.986100",
+    distance: "200",
+    subtitle: "w202",
+    logo: <Checkbox size="xs" checked />,
+    details: [
+      { name: "Гис", value: "2" },
+      { name: "Ригис", value: "4" },
+      { name: "Керн", value: "4" },
+    ],
+    submenu: [
+      { name: "Координаты", value: "Файл.dev" },
+      { name: "Геометрия", value: "W203" },
+      { name: "Координаты", value: "W203" },
+      { name: "Исследования", value: "W203" },
+      { name: "Маркеры", value: "W203" },
     ],
   },
 ];
@@ -69,20 +194,14 @@ const FileManagerImport = () => {
   const { handleToggleNav, activeNav } = useContext(ShowNavContext);
   const [isChecked, setIsChecked] = useState(true);
   const [choiceGroupValue, setChoiceGroupValue] = useState(items[0]);
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [isChecked2, setIsChecked2] = useState(false);
-
-  const toggleOpen = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const toggleChecked = () => {
-    setIsChecked2(!isChecked2);
+  const handleToggleSubMenu = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
   };
 
   return (
@@ -95,7 +214,6 @@ const FileManagerImport = () => {
         dropdownLogo={true}
         pagesLink={pagesLink}
       />
-
       <div className="flex file-manager">
         <NavbarLayout
           navbarHidden={true}
@@ -216,68 +334,93 @@ const FileManagerImport = () => {
           </ul>
         </div>
         <div className="middle-sidebar">
-          <div className="sidebar-header">
-            <Text as="h1" view="primary">
-              Обьекты
-            </Text>
-            <div className="MixFlex MixFlex_gap_2xs">
-              <Button size="xs" view="clear" iconLeft={IconSearchStroked} />
-              <Button size="xs" view="clear" iconLeft={IconSortDownCenter} />
-            </div>
-          </div>
-          <Tabs
-            value={value2}
-            onChange={setValue2}
-            items={items2}
-            size="xs"
-            getItemLabel={getItemLabel2}
-          />
-          <div style={{ borderBottom: "1px solid #eaeaea", padding: "10px 0" }}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <Checkbox
-                  size="xs"
-                  checked={isChecked}
-                  onChange={toggleChecked}
-                />
-                <div style={{ marginLeft: 10 }}>{data.title}</div>
-              </div>
-              <div>{data.coordinates}</div>
-              <div>{data.distance}</div>
-              <div onClick={toggleOpen} style={{ cursor: "pointer" }}>
-                {isOpen ? <IconArrowDown /> : <IconArrowRight />}
+          <div>
+            <div className="sidebar-header">
+              <Text as="h1" view="primary">
+                Обьекты
+              </Text>
+              <div className="MixFlex MixFlex_gap_2xs">
+                <Button size="xs" view="clear" iconLeft={IconSearchStroked} />
+                <Button size="xs" view="clear" iconLeft={IconSortDownCenter} />
               </div>
             </div>
-            {isOpen && (
-              <div
-                style={{
-                  marginTop: 10,
-                  backgroundColor: "#f5f5f5",
-                  padding: 10,
-                  borderRadius: 8,
-                }}
-              >
-                <div style={{ fontWeight: "bold", marginBottom: 5 }}>
-                  {data.subtitle}
-                </div>
-                {data.details.map((detail, index) => (
-                  <div
-                    key={index}
-                    style={{ display: "flex", justifyContent: "space-between" }}
-                  >
-                    <span>{detail.name}</span>
-                    <span>{detail.value}</span>
+            <Tabs
+              value={value2}
+              onChange={setValue2}
+              items={items2}
+              size="xs"
+              getItemLabel={getItemLabel2}
+            />
+            <div className="drop-list">
+              {data?.map((item, idx) => (
+                <div
+                  className={`drop-list__tr ${
+                    expandedIndex === idx ? "active" : ""
+                  }`}
+                  key={idx}
+                >
+                  <div className="left-box">{item.logo}</div>
+                  <div className="right-box">
+                    <div className="MixFlex MixFlex_gap_2xs MixFlex_align_center MixFlex_justify_space-between right-box__top">
+                      <Text size="xs" view="primary">
+                        {item.subtitle}
+                      </Text>
+                      <div className="MixFlex MixFlex_gap_2xs">
+                        <Text size="xs" view="secondary">
+                          {item.coordinates}
+                        </Text>
+                        <Text size="xs" view="secondary">
+                          {item.distance}
+                        </Text>
+                      </div>
+                    </div>
+                    <div className="right-box__bottom MixFlex MixFlex_gap_s MixFlex_align_center MixFlex_justify_space-between">
+                      <div className="MixFlex MixFlex_gap_s MixFlex_align_center">
+                        {item.details?.map((detail, idx) => (
+                          <Text size="xs" view="secondary" key={idx}>
+                            {`${detail.name} ${detail.value}`}
+                          </Text>
+                        ))}
+                      </div>
+                      <Button
+                        iconLeft={
+                          expandedIndex === idx ? IconArrowRight : IconArrowDown
+                        }
+                        size="xs"
+                        view="clear"
+                        onClick={() => handleToggleSubMenu(idx)} // Tugma bosilganda sub-menu'ni ochish/yopish
+                      />
+                    </div>
+                    {expandedIndex === idx && (
+                      <div className="sub-menu">
+                        <ul>
+                          {item.submenu?.map((submenuItem, index) => (
+                            <li
+                              key={index}
+                              className="MixFlex MixFlex_gap_s MixFlex_align_center MixFlex_justify_space-between"
+                            >
+                              <Text size="xs" view="primary">
+                                {submenuItem.name}
+                              </Text>
+                              <Text size="xs" view="secondary">
+                                {submenuItem.value}
+                              </Text>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
-                ))}
-              </div>
-            )}
+                </div>
+              ))}
+            </div>
           </div>
+          <Button
+            className="bottom-btn"
+            size="m"
+            label="Добавить в проект"
+            view="primary"
+          />
         </div>
         <div className="right-sidebar">
           <div className="sidebar-header">
