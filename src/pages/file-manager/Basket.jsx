@@ -79,80 +79,86 @@ const Basket = () => {
           openNav={activeNav}
           setActiveNav={activeNav}
         />
-        <div className="basket-content">
-          <Button
-            size="xs"
-            view="ghost"
-            label="Менеджер данных"
-            iconLeft={IconBackward}
-          />
-          <Text className="title">
-            Корзина <span>12</span>
-          </Text>
+        <div className="scroll-content">
+          <div className="basket-content">
+            <Button
+              size="xs"
+              view="ghost"
+              label="Менеджер данных"
+              iconLeft={IconBackward}
+            />
+            <Text className="title">
+              Корзина <span>12</span>
+            </Text>
 
-          <div className="basket-cards">
-            <div className="left-card">
-              <Card>
-                <div className="MixFlex clear-header MixFlex_justify_space-between">
-                  <Checkbox
-                    label="Выбрать"
-                    checked={isChecked}
-                    onChange={handleCheckboxChange}
-                  />
-                  <Button
-                    size="xs"
-                    view="clear"
-                    label="Очистить корзину"
-                    iconLeft={IconClose}
-                  />
-                </div>
-                <ul>
-                  {data?.map((item, index) => (
-                    <li key={index}>
-                      <div className="logo">{item.logo}</div>
-                      <div className="w-full">
-                        <div className="top">
-                          <Text size="xs" view="primary">
-                            {item.title}
-                          </Text>
+            <div className="basket-cards">
+              <div className="left-card">
+                <Card>
+                  <div className="MixFlex clear-header MixFlex_justify_space-between">
+                    <Checkbox
+                      label="Выбрать"
+                      checked={isChecked}
+                      onChange={handleCheckboxChange}
+                    />
+                    <Button
+                      size="xs"
+                      view="clear"
+                      label="Очистить корзину"
+                      iconLeft={IconClose}
+                    />
+                  </div>
+                  <ul>
+                    {data?.map((item, index) => (
+                      <li key={index}>
+                        <div className="logo">{item.logo}</div>
+                        <div className="w-full">
+                          <div className="top">
+                            <Text size="xs" view="primary">
+                              {item.title}
+                            </Text>
+                          </div>
+                          <div className="bottom MixFlex w-full MixFlex_align_center MixFlex_justify_space-between">
+                            <Text size="xs" view="secondary">
+                              {item.subtitle}
+                            </Text>
+                            <Button
+                              iconLeft={IconClose}
+                              size="xs"
+                              view="clear"
+                            />
+                          </div>
                         </div>
-                        <div className="bottom MixFlex w-full MixFlex_align_center MixFlex_justify_space-between">
-                          <Text size="xs" view="secondary">
-                            {item.subtitle}
-                          </Text>
-                          <Button iconLeft={IconClose} size="xs" view="clear" />
-                        </div>
-                      </div>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </div>
+              <div className="right-card">
+                <Card>
+                  <Text as="h3" view="primary" className="card-title">
+                    Итого
+                  </Text>
+                  <ul>
+                    <li>
+                      <Text size="xs" view="secondary">
+                        Размер данных
+                      </Text>
+                      <Text size="xs" view="primary">
+                        13.02 Мб
+                      </Text>
                     </li>
-                  ))}
-                </ul>
-              </Card>
-            </div>
-            <div className="right-card">
-              <Card>
-                <Text as="h3" view="primary" className="right-card__title">
-                  Итого
-                </Text>
-                <ul>
-                  <li>
-                    <Text size="xs" view="secondary">
-                      Размер данных
-                    </Text>
-                    <Text size="xs" view="primary">
-                      13.02 Мб
-                    </Text>
-                  </li>
-                  <li>
-                    <Text size="xs" view="secondary">
-                      Размер данных
-                    </Text>
-                    <Text size="xs" view="primary">
-                      13.02 Мб
-                    </Text>
-                  </li>
-                </ul>
-                <Button size="m" view="primary" label="Перейти к экспорту" />
-              </Card>
+                    <li>
+                      <Text size="xs" view="secondary">
+                        Размер данных
+                      </Text>
+                      <Text size="xs" view="primary">
+                        13.02 Мб
+                      </Text>
+                    </li>
+                  </ul>
+                  <Button size="m" view="primary" label="Перейти к экспорту" />
+                </Card>
+              </div>
             </div>
           </div>
         </div>

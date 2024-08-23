@@ -6,6 +6,8 @@ import {
   CorrCircuit,
   Dashboard,
   Directory,
+  ExportBasket,
+  ExportBasketUnloading,
   FileManager,
   FileManagerImport,
   GeomodelingDashboard,
@@ -57,4 +59,6 @@ const routes = [
   { path: "geomodeling-dashboard", element: <GeomodelingDashboard /> },
   { path: "file-manager-import", element: <FileManagerImport /> },
   { path: "basket", element: <Basket /> },
+  { path: "export-basket", element: <ExportBasket /> },
+  { path: "export-basket-unloading", element: <ExportBasketUnloading /> },
 ];

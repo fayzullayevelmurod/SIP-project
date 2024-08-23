@@ -273,50 +273,48 @@ const Directory = () => {
             </div>
             <div className="text-box">
               <Text as="span" size="s" view="secondary">
-                Тип
+                Описание
               </Text>
-              <Text size="s">Открытое</Text>
+              <Text size="s">
+                Описание очень-очень длинное на две строки, и еще раз длинное
+                название чего-либо
+              </Text>
+            </div>
+            <div className="text-box ">
+              <Text view="secondary" size="s">
+                Статус
+              </Text>
+              <div className="badges MixFlex MixFlex_gap_2xs">
+                <Badge
+                  size="s"
+                  status="success"
+                  icon={IconAllDone}
+                  label="Согласован"
+                  iconRight={IconAlert}
+                />
+                <Badge
+                  size="s"
+                  status="success"
+                  icon={IconAllDone}
+                  label="Согласован"
+                  iconRight={IconAlert}
+                />
+              </div>
             </div>
             <div className="text-box">
-              <Text as="span" size="s" view="secondary">
-                Дочернее общество
+              <Text view="secondary" size="s">
+                Теги
               </Text>
-              <Text size="s">Северное</Text>
+              <div className="tags">
+                <Tag size="xs" mode="check" label="Label" />
+                <Tag size="xs" mode="check" label="Label" />
+              </div>
             </div>
             <div className="text-box">
-              <Text as="span" size="s" view="secondary">
-                Участок
+              <Text view="secondary" size="s">
+                Пользователиа
               </Text>
-              <Text size="s">Участок</Text>
-            </div>
-          </div>
-          <div className="avatar-group">
-            <Text view="secondary" size="s">
-              Команда
-            </Text>
-            <AvatarGroup items={avatarGroupItems} visibleCount={4} />
-          </div>
-          <div className="tags-group">
-            <Text view="secondary" size="s">
-              Теги
-            </Text>
-            <div className="tags">
-              <Tag size="xs" mode="button" label="Геологоразведка" />
-              <Tag size="xs" mode="button" label="Добыча" />
-            </div>
-          </div>
-          <div className="badges-group">
-            <Text view="secondary" size="s">
-              Статус
-            </Text>
-            <div className="badges">
-              <Badge
-                size="s"
-                status="success"
-                icon={IconAllDone}
-                label="Рабочий"
-              />
-              <Badge size="s" status="error" icon={IconAlert} label="Авария" />
+              <AvatarGroup items={avatarGroupItems} visibleCount={4} />
             </div>
           </div>
         </div>

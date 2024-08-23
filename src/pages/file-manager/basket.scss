@@ -1,10 +1,27 @@
 .basket-page {
+	.ChoiceGroup-Label {
+		border: 1px solid transparent;
+	}
+
+	.ChoiceGroup-Label_checked {
+		background: transparent;
+		color: #0078D2;
+		border: 1px solid #0078D2;
+	}
+
+
+	.scroll-content {
+		height: calc(100vh - 48px);
+		overflow-y: auto;
+		width: 100%;
+	}
 
 	.basket-content {
 		max-width: 1280px;
 		width: 100%;
 		margin: 0 auto;
 		padding: 12px 0;
+
 
 		.title {
 			font-size: 23px;
@@ -93,14 +110,111 @@
 				border-bottom: none;
 			}
 		}
+
 		button {
 			width: 100%;
 		}
 	}
 
-	.right-card__title {
+	.card-title {
 		font-size: 15px;
 		font-weight: 600;
 		line-height: 24px;
+	}
+}
+
+
+.basket-export__page {
+	.card-title {
+		margin-bottom: 24px;
+	}
+
+	.sub-title {
+		margin-top: 28px;
+	}
+
+	.left-card {
+		.Checkbox-Label {
+			margin-left: 13px;
+		}
+
+		li {
+			border-top: none;
+			padding: 12px 0;
+			border-bottom: 1px solid #D0D8DF;
+
+			.icons--Icon {
+				width: 32px;
+				height: 32px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				svg {
+					width: 16px;
+					height: 16px;
+				}
+			}
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	.answer-item {
+		.Card {
+			&.active {
+				background: #00426912;
+			}
+		}
+
+		.info-text {
+			margin: 13px 0 0 30px;
+		}
+	}
+}
+
+// export-basket__uploading-page
+.export-basket__uploading-page {
+	.top-box {
+		margin-bottom: 28px;
+	}
+
+	.card-title {
+		margin-bottom: 24px;
+	}
+
+	.list {
+
+		.list-item {
+			border-bottom: 1px solid #D0D8DF;
+			padding: 5px 0;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			.top-content {
+				padding: 7px 4px;
+			}
+
+			.bottom-content {
+				padding: 4px;
+			}
+		}
+
+		.list-item__logo {
+			width: 32px;
+			height: 32px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			svg {
+				width: 10px;
+				height: 10px;
+			}
+		}
 	}
 }

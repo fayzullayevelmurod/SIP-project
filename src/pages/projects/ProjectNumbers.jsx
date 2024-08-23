@@ -199,7 +199,7 @@ const items2 = [
 
 const ProjectNumbers = () => {
   const { handleToggleNav, activeNav } = useContext(ShowNavContext);
-  const [tabValue, setTabValue] = useState(tabItems[1]);
+  const [tabValue, setTabValue] = useState(tabItems[0]);
   const [value, setValue] = useState();
   const [value2, setValue2] = useState();
   return (
