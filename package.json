@@ -12,8 +12,10 @@
   "dependencies": {
     "@amcharts/amcharts5": "^5.9.13",
     "@amcharts/amcharts5-geodata": "^5.1.4",
+    "@bem-react/classname": "^1.6.0",
     "@consta/header": "^3.0.0",
     "@consta/icons": "^1.1.0",
+    "@consta/rc-tree-adapter": "^3.0.0",
     "@consta/table": "^0.0.1",
     "@consta/uikit": "^5.5.0",
     "@consta/widgets": "^4.2.2",

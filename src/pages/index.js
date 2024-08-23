@@ -30,3 +30,6 @@ export { default as FileManagerImport } from './file-manager/FileManagerImport';
 export { default as Basket } from './file-manager/Basket';
 export { default as ExportBasket } from './file-manager/ExportBasket';
 export { default as ExportBasketUnloading } from './file-manager/ExportBasketUnloading';
+export { default as DataTree } from './data-tree/DataTree';
+export { default as MultiMenu } from './data-tree/MultiMenu';
+export { default as Columns } from './data-tree/Columns';

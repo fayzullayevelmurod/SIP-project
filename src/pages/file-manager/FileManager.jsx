@@ -712,8 +712,8 @@ const FileManager = () => {
                 Теги
               </Text>
               <div className="tags">
-                <Tag size="xs" label="Label" />
-                <Tag size="xs" label="Label" />
+                <Tag size="xs" label="Label" mode="checkbox" />
+                <Tag size="xs" label="Label" mode="checkbox" />
               </div>
             </div>
             <div className="text-box">
