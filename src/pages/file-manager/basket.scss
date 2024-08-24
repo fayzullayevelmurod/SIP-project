@@ -12,7 +12,7 @@
 
 	.scroll-content {
 		height: calc(100vh - 48px);
-		overflow-y: auto;
+		overflow: auto;
 		width: 100%;
 	}
 
@@ -20,7 +20,7 @@
 		max-width: 1280px;
 		width: 100%;
 		margin: 0 auto;
-		padding: 12px 0;
+		padding: 12px 16px;
 
 
 		.title {
@@ -134,6 +134,8 @@
 	}
 
 	.left-card {
+		min-width: 790px;
+
 		.Checkbox-Label {
 			margin-left: 13px;
 		}
@@ -216,5 +218,77 @@
 				height: 10px;
 			}
 		}
+	}
+}
+
+// media
+@media screen and (max-width: 1024px) {
+	.basket-export__page {
+		.basket-cards {
+			flex-direction: column;
+		}
+
+		.left-card {
+			min-width: auto;
+		}
+
+		.right-card {
+			min-width: 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.basket-page {
+		.Card {
+			padding: 12px;
+		}
+
+		.right-card ul {
+			padding: 0 0 16px 0;
+		}
+
+		&.home {
+			.basket-cards {
+				flex-direction: column;
+			}
+
+			.right-card {
+				min-width: 100%;
+				max-width: 100%;
+			}
+		}
+
+		.BreadcrumbsItem {
+			display: none;
+
+			.BreadcrumbsItem-Delimiter {
+				display: none;
+			}
+
+			&:last-child {
+				display: block;
+			}
+		}
+
+		.Badge {
+			display: none;
+		}
+
+		.header .header-left .line {
+			display: block;
+		}
+
+		.header .logo-box p {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.export-basket__uploading-page .list .list-item .bottom-content {
+		flex-wrap: wrap;
+		row-gap: 8px;
 	}
 }

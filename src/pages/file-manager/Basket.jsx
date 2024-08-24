@@ -64,7 +64,7 @@ const Basket = () => {
   };
 
   return (
-    <div className="basket-page">
+    <div className="basket-page home">
       <Header
         handleToggleNav={handleToggleNav}
         searchHeader={true}

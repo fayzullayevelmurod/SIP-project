@@ -142,7 +142,24 @@ const ExportBasket = () => {
                   <Text className="card-title" as="h3">
                     Как выгрузить?
                   </Text>
-                  <Grid cols={4} gap="xs">
+                  <Grid
+                    cols={4}
+                    gap="xs"
+                    breakpoints={{
+                      0: {
+                        cols: 1,
+                        gap: "xs",
+                      },
+                      600: {
+                        cols: 2,
+                        gap: "xs",
+                      },
+                      992: {
+                        cols: 4,
+                        gap: "xs",
+                      },
+                    }}
+                  >
                     {checkboxes.map((checkbox, index) => {
                       const isActive = checkedItems[checkbox.name] || false;
 
@@ -198,7 +215,20 @@ const ExportBasket = () => {
                   <Text className="card-title sub-title" as="h3">
                     Куда выгрузить?
                   </Text>
-                  <Grid cols={3} gap="xs">
+                  <Grid
+                    cols={3}
+                    gap="xs"
+                    breakpoints={{
+                      0: {
+                        cols: 1,
+                        gap: "xs",
+                      },
+                      992: {
+                        cols: 3,
+                        gap: "xs",
+                      },
+                    }}
+                  >
                     {checkboxes2.map((checkbox, index) => {
                       const isActive2 = checkedItems2[checkbox.name] || false;
 
@@ -260,7 +290,20 @@ const ExportBasket = () => {
                   <Text className="card-title sub-title" as="h3">
                     Куда выгрузить?
                   </Text>
-                  <Grid cols={3} gap="xs">
+                  <Grid
+                    cols={3}
+                    gap="xs"
+                    breakpoints={{
+                      0: {
+                        cols: 1,
+                        gap: "xs",
+                      },
+                      992: {
+                        cols: 3,
+                        gap: "xs",
+                      },
+                    }}
+                  >
                     {checkboxes3.map((checkbox, index) => {
                       const isActive = checkedItems3[checkbox.name] || false;
 
