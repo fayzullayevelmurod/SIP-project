@@ -226,13 +226,13 @@ const ProjectNumbers = () => {
                 20.01.2023
               </Text>
             </div>
-            <div className="MixFlex MixFlex_gap_2xs">
+            <div className="MixFlex MixFlex_gap_2xs media-hide__btns">
               <Button view="clear" size="xs" iconLeft={IconBookmarkStroked} />
               <Button view="clear" size="xs" iconLeft={IconShare} />
               <Button view="clear" size="xs" iconLeft={IconKebab} />
             </div>
           </div>
-          <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between">
+          <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between title-box">
             <Text as="h2" className="title">
               Освоение месторождения №207
             </Text>
@@ -244,10 +244,26 @@ const ProjectNumbers = () => {
             items={tabItems}
             getItemLabel={getTabItemLabel}
             size="xs"
+            withScrollButtons={false}
+            fitMode="scroll"
           />
 
           {tabValue == tabItems[0] && (
-            <Grid gap="xs" className="custom-grid" cols={5}>
+            <Grid
+              gap="xs"
+              className="custom-grid"
+              cols={5}
+              breakpoints={{
+                0: {
+                  cols: 1,
+                  rowGap: "xs",
+                },
+                1200: {
+                  cols: 5,
+                  rowGap: "xs",
+                },
+              }}
+            >
               <GridItem className="flexible" col={4}>
                 <div className="MixFlex MixFlex_direction_column MixFlex_gap_xl">
                   <div className="MixFlex MixFlex_direction_column MixFlex_gap_s w-full">
@@ -387,8 +403,8 @@ const ProjectNumbers = () => {
           )}
           {tabValue == tabItems[1] && (
             <div>
-              <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between w-full">
-                <Text className="title-sm MixSpace_mB_s">Услуги и работы</Text>
+              <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between w-full MixSpace_mB_s">
+                <Text className="title-sm">Услуги и работы</Text>
                 <Button
                   size="xs"
                   view="ghost"
@@ -396,9 +412,9 @@ const ProjectNumbers = () => {
                   label="Загрузить документ"
                 />
               </div>
-              <DropdownTable />
-
-              <table></table>
+              <div className="table-scroll">
+                <DropdownTable />
+              </div>
 
               <div className="MixFlex_align_center MixFlex MixFlex_gap_xs bottom-panel__number">
                 <Checkbox size="m" label="Выбрано: 2" />
@@ -480,13 +496,13 @@ const ProjectNumbers = () => {
                 <ul className="user-list">
                   <li>
                     <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between">
-                      <div className="MixFlex MixFlex_align_center">
+                      <div className="MixFlex MixFlex_align_center user-top__box">
                         <User
                           size="s"
                           name="Беляев Алексей Петрович"
                           className="user-box"
                         />
-                        <Text size="xs" view="secondary">
+                        <Text className="email-text" size="xs" view="secondary">
                           belyev.ap@mail.com
                         </Text>
                       </div>
@@ -498,13 +514,13 @@ const ProjectNumbers = () => {
                   </li>
                   <li>
                     <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between">
-                      <div className="MixFlex MixFlex_align_center">
+                      <div className="MixFlex MixFlex_align_center user-top__box">
                         <User
                           size="s"
                           name="Беляев Алексей Петрович"
                           className="user-box"
                         />
-                        <Text size="xs" view="secondary">
+                        <Text className="email-text" size="xs" view="secondary">
                           belyev.ap@mail.com
                         </Text>
                       </div>
@@ -516,13 +532,13 @@ const ProjectNumbers = () => {
                   </li>
                   <li>
                     <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between">
-                      <div className="MixFlex MixFlex_align_center">
+                      <div className="MixFlex MixFlex_align_center user-top__box">
                         <User
                           size="s"
                           name="Беляев Алексей Петрович"
                           className="user-box"
                         />
-                        <Text size="xs" view="secondary">
+                        <Text className="email-text" size="xs" view="secondary">
                           belyev.ap@mail.com
                         </Text>
                       </div>
@@ -534,13 +550,13 @@ const ProjectNumbers = () => {
                   </li>
                   <li>
                     <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between">
-                      <div className="MixFlex MixFlex_align_center">
+                      <div className="MixFlex MixFlex_align_center user-top__box">
                         <User
                           size="s"
                           name="Беляев Алексей Петрович"
                           className="user-box"
                         />
-                        <Text size="xs" view="secondary">
+                        <Text className="email-text" size="xs" view="secondary">
                           belyev.ap@mail.com
                         </Text>
                       </div>
@@ -573,8 +589,8 @@ const ProjectNumbers = () => {
                     </div>
                     <div className="line"></div>
                   </div>
-                  <Card className="MixFlex MixFlex_align_center MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
-                    <div className="MixFlex MixFlex_align_center MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                  <Card className="MixFlex MixFlex_align_start MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s white-space-nowrap">
+                    <div className="MixFlex MixFlex_wrap MixFlex_align_center MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
                       <Avatar size="s" name="Артур Утяшев" />
                       <Text size="xs" weight="semibold">
                         Артур Утяшев
@@ -607,8 +623,8 @@ const ProjectNumbers = () => {
                     <div className="line"></div>
                   </div>
                   <Card>
-                    <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
-                      <div className="MixFlex MixFlex_align_center MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                    <div className="MixFlex white-space-nowrap MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s MixFlex_align_start">
+                      <div className="MixFlex MixFlex_align_center MixFlex_direction_row MixFlex_gap_s MixFlex_align_center MixFlex_wrap">
                         <Avatar size="s" name="Артур Утяшев" />
                         <Text size="xs" weight="semibold">
                           Сергей Светлаков
@@ -658,8 +674,8 @@ const ProjectNumbers = () => {
                     <div className="line"></div>
                   </div>
                   <Card>
-                    <div className="MixFlex MixFlex_align_center MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
-                      <div className="MixFlex MixFlex_align_center MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                    <div className="MixFlex  MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s MixFlex_align_start">
+                      <div className="MixFlex MixFlex_wrap MixFlex_align_center MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
                         <Avatar size="s" name="Артур Утяшев" />
                         <Text size="xs" weight="semibold">
                           Ильяс Хисматуллин
@@ -670,7 +686,11 @@ const ProjectNumbers = () => {
                         <Tag size="xs" label="ГЕО" mode="check" />
                       </div>
                       <div className="MixFlex MixFlex_gap_s MixFlex_align_center">
-                        <Text size="xs" view="secondary">
+                        <Text
+                          className="white-space-nowrap"
+                          size="xs"
+                          view="secondary"
+                        >
                           2 часа назад
                         </Text>
                         <Button size="xs" view="clear" iconLeft={IconKebab} />
@@ -693,8 +713,8 @@ const ProjectNumbers = () => {
                     </div>
                     <div className="line last-child"></div>
                   </div>
-                  <Card className="MixFlex MixFlex_align_center MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
-                    <div className="MixFlex MixFlex_align_center MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                  <Card className="MixFlex white-space-nowrap MixFlex_align_center MixFlex_justify_space-between MixFlex_direction_row MixFlex_gap_s MixFlex_align_center">
+                    <div className="MixFlex MixFlex_wrap MixFlex_direction_row MixFlex_gap_s MixFlex_align_start">
                       <Avatar size="s" name="Артур Утяшев" />
                       <Text size="xs" weight="semibold">
                         Система

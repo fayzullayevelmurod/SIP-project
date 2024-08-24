@@ -114,7 +114,6 @@ const DropdownTable = () => {
   const handleCheckboxChange = (id, parentId = null) => {
     const newData = data.map((row) => {
       if (row.id === id) {
-        // Toggle parent checkbox and all its subRows
         if (row.subRows) {
           const newSelected = !row.selected;
           return {
