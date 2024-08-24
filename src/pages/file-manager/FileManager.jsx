@@ -142,7 +142,7 @@ const FileManager = () => {
   };
 
   return (
-    <div className="file-manager__page">
+    <div className="file-manager__page home">
       <Header
         handleToggleNav={handleToggleNav}
         searchHeader={true}

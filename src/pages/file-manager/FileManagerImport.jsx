@@ -21,6 +21,8 @@ import { IconArrowDown } from "@consta/icons/IconArrowDown";
 import { IconArrowRight } from "@consta/icons/IconArrowRight";
 import { IconWellBlue } from "@consta/icons/IconWellBlue";
 import { Icon3DMap } from "@consta/icons/Icon3DMap";
+import { IconArrowNext } from "@consta/icons/IconArrowNext";
+import { IconArrowPrevious } from "@consta/icons/IconArrowPrevious";
 
 const pagesLink = [
   { label: "Менеджер данных", href: "file-manager" },
@@ -204,6 +206,18 @@ const FileManagerImport = () => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
+  const [activeSidebar, setActiveSidebar] = useState({
+    left: false,
+    right: false,
+  });
+
+  const handleOpenSidebar = (sidebar) => {
+    setActiveSidebar((prevState) => ({
+      ...prevState,
+      [sidebar]: !prevState[sidebar],
+    }));
+  };
+
   return (
     <div className="file-manager__page file-manager__import-page">
       <Header
@@ -221,7 +235,17 @@ const FileManagerImport = () => {
           openNav={activeNav}
           setActiveNav={activeNav}
         />
-        <div className="left-sidebar">
+        <div
+          className={`left-sidebar ${activeSidebar.left ? "show-sidebar" : ""}`}
+        >
+          <Button
+            view="clear"
+            size="xs"
+            onlyIcon
+            iconLeft={IconArrowNext}
+            onClick={() => handleOpenSidebar("left")}
+            className={`media-open__sidebar-btn MixSpace_mB_s`}
+          />
           <div className="sidebar-header">
             <Text as="h1" view="primary">
               Скважина 1
@@ -342,6 +366,22 @@ const FileManagerImport = () => {
               <div className="MixFlex MixFlex_gap_2xs">
                 <Button size="xs" view="clear" iconLeft={IconSearchStroked} />
                 <Button size="xs" view="clear" iconLeft={IconSortDownCenter} />
+                <Button
+                  view="clear"
+                  size="xs"
+                  onlyIcon
+                  iconLeft={IconArrowNext}
+                  onClick={() => handleOpenSidebar("left")}
+                  className={`media-open__sidebar-btn`}
+                />
+                <Button
+                  view="clear"
+                  size="xs"
+                  onlyIcon
+                  iconLeft={IconArrowPrevious}
+                  onClick={() => handleOpenSidebar("right")}
+                  className={`media-open__sidebar-btn`}
+                />
               </div>
             </div>
             <Tabs
@@ -422,7 +462,19 @@ const FileManagerImport = () => {
             view="primary"
           />
         </div>
-        <div className="right-sidebar">
+        <div
+          className={`right-sidebar ${
+            activeSidebar.right ? "show-sidebar" : ""
+          }`}
+        >
+          <Button
+            view="clear"
+            size="xs"
+            onlyIcon
+            iconLeft={IconArrowPrevious}
+            onClick={() => handleOpenSidebar("right")}
+            className={`media-open__sidebar-btn MixSpace_mB_s`}
+          />
           <div className="sidebar-header">
             <Text as="h1" view="primary">
               Скважина 1

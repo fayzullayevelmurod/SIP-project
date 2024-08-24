@@ -224,7 +224,7 @@
 		}
 	}
 
-	.file-manager__page .left-sidebar {
+	.file-manager__page.home .left-sidebar {
 		min-width: 205px;
 	}
 
@@ -240,6 +240,11 @@
 		.right-sidebar {
 			min-width: 270px;
 		}
+	}
+
+	.file-manager__import-page .middle-sidebar {
+		max-width: 100%;
+		min-width: 100%;
 	}
 
 	.file-manager__page .lists .top-box {
