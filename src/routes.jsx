@@ -59,7 +59,7 @@ const routes = [
   { path: "projects", element: <Projects /> },
   { path: "projects-number", element: <ProjectNumbers /> },
   { path: "map", element: <Map /> },
-  { path: "geomodeling-dashboard", element: <GeomodelingDashboard /> },
+  // { path: "geomodeling-dashboard", element: <GeomodelingDashboard /> },
   { path: "file-manager-import", element: <FileManagerImport /> },
   { path: "basket", element: <Basket /> },
   { path: "export-basket", element: <ExportBasket /> },

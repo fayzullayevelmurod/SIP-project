@@ -30,9 +30,10 @@ import { IconColumns } from "@consta/icons/IconColumns";
 import { IconWellFolder } from "@consta/icons/IconWellFolder";
 import { IconMeatball } from "@consta/icons/IconMeatball";
 import { IconArrowRight } from "@consta/icons/IconArrowRight";
-import { IconArrowPrevious } from "@consta/icons/IconArrowPrevious";
 import { IconArrowNext } from "@consta/icons/IconArrowNext";
 import { Attachment } from "@consta/uikit/Attachment";
+import { Grid, GridItem } from "@consta/uikit/Grid";
+import { IconArrowPrevious } from "@consta/icons/IconArrowPrevious";
 
 const pagesLink = [
   {
@@ -281,6 +282,22 @@ const FileManager = () => {
                 getItemLabel={(item) => item}
                 multiple={true}
                 name="ChoiceGroupExample"
+              />
+              <Button
+                view="clear"
+                size="xs"
+                onlyIcon
+                iconLeft={IconArrowNext}
+                onClick={() => handleOpenSidebar("left")}
+                className={`media-open__sidebar-btn`}
+              />
+              <Button
+                view="clear"
+                size="xs"
+                onlyIcon
+                iconLeft={IconArrowPrevious}
+                onClick={() => handleOpenSidebar("right")}
+                className={`media-open__sidebar-btn`}
               />
             </div>
           </div>
@@ -648,7 +665,7 @@ const FileManager = () => {
             view="clear"
             size="xs"
             onlyIcon
-            iconLeft={IconArrowNext}
+            iconLeft={IconArrowPrevious}
             onClick={() => handleOpenSidebar("right")}
             className={`media-open__sidebar-btn MixSpace_mB_s`}
           />

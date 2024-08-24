@@ -131,6 +131,7 @@
 		min-width: 360px;
 		max-width: 360px;
 	}
+
 	.middle-sidebar {
 		display: flex;
 		flex-direction: column;
@@ -281,10 +282,8 @@
 		}
 	}
 
-	.file-manager__page {
-		.media-open__sidebar-btn {
-			display: flex;
-		}
+	.file-manager__page .media-open__sidebar-btn {
+		display: flex;
 	}
 }
 
