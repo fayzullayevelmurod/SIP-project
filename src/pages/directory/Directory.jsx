@@ -21,6 +21,8 @@ import { ShowNavContext } from "../../context/ShowNavContext";
 import { IconSearchStroked } from "@consta/icons/IconSearchStroked";
 import { IconSortDownCenter } from "@consta/icons/IconSortDownCenter";
 import { Grid, GridItem } from "@consta/uikit/Grid";
+import { IconArrowNext } from "@consta/icons/IconArrowNext";
+import { IconArrowPrevious } from "@consta/icons/IconArrowPrevious";
 
 const rows = [
   {
@@ -182,6 +184,17 @@ const Directory = () => {
   const handleListItemClick = (item) => {
     setSelectedItem(item.id);
   };
+  const [activeSidebar, setActiveSidebar] = useState({
+    left: false,
+    right: false,
+  });
+
+  const handleOpenSidebar = (sidebar) => {
+    setActiveSidebar((prevState) => ({
+      ...prevState,
+      [sidebar]: !prevState[sidebar],
+    }));
+  };
 
   return (
     <div className="directory-page">
@@ -192,13 +205,23 @@ const Directory = () => {
         hamburgerLogo={true}
         dropdownLogo={true}
       />
-      <Grid className="flex">
+      <div className="flex scroll-box">
         <NavbarLayout
           hideHamburger={true}
           openNav={activeNav}
           setActiveNav={() => handleToggleNav(!activeNav)}
         />
-        <div className="left-sidebar">
+        <div
+          className={`left-sidebar ${activeSidebar.left ? "show-sidebar" : ""}`}
+        >
+          <Button
+            view="clear"
+            size="xs"
+            onlyIcon
+            iconLeft={IconArrowNext}
+            onClick={() => handleOpenSidebar("left")}
+            className={`media-open__sidebar-btn MixSpace_mB_s`}
+          />
           <div className="sidebar-header">
             <Text as="h1" view="primary">
               Северное
@@ -228,7 +251,25 @@ const Directory = () => {
             <Text as="h1" view="primary">
               {listItems.find((item) => item.id === selectedItem)?.label}
             </Text>
+            <div className="MixFlex MixFlex_gap_2xs">
             <Button size="xs" view="clear" iconLeft={IconKebab} />
+              <Button
+                view="clear"
+                size="xs"
+                onlyIcon
+                iconLeft={IconArrowNext}
+                onClick={() => handleOpenSidebar("left")}
+                className={`media-open__sidebar-btn`}
+              />
+              <Button
+                view="clear"
+                size="xs"
+                onlyIcon
+                iconLeft={IconArrowPrevious}
+                onClick={() => handleOpenSidebar("right")}
+                className={`media-open__sidebar-btn`}
+              />
+            </div>
           </div>
           <div className="table-box">
             <Table zebraStriped="odd" rows={rows} columns={columns} />
@@ -247,7 +288,19 @@ const Directory = () => {
             </div>
           </div>
         </div>
-        <div className={`right-sidebar ${activeNav && "show-nav"}`}>
+        <div
+          className={`right-sidebar ${activeNav && "show-nav"} ${
+            activeSidebar.right ? "show-sidebar" : ""
+          }`}
+        >
+          <Button
+            view="clear"
+            size="xs"
+            onlyIcon
+            iconLeft={IconArrowPrevious}
+            onClick={() => handleOpenSidebar("right")}
+            className={`media-open__sidebar-btn MixSpace_mB_s`}
+          />
           <div className="sidebar-header">
             <Text as="h1" view="primary">
               Северное
@@ -318,7 +371,7 @@ const Directory = () => {
             </div>
           </div>
         </div>
-      </Grid>
+      </div>
     </div>
   );
 };
