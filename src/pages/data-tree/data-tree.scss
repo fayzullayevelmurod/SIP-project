@@ -1,4 +1,16 @@
 .data-tree__page {
+	.relative-box {
+		position: relative;
+	}
+
+	.media-show__nav-btn {
+		display: none;
+	}
+
+	.media-show__menu-btn {
+		display: none;
+	}
+
 	.sidebars {
 		height: calc(100vh - 48px);
 		display: flex;
@@ -79,6 +91,67 @@
 	.light-primary-icon {
 		path {
 			fill: #56B9F2;
+		}
+	}
+}
+
+@media screen and (max-width: 1745px) {
+	.columns-page .sidebars {
+		overflow-x: auto;
+	}
+
+	.columns-page {
+		.null-content {
+			margin: 0 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.data-tree__page .media-show__nav-btn {
+		display: flex;
+		margin: 16px auto 0 16px;
+	}
+
+	.data-tree__page .navbar-sidebar.media-hide__navbar {
+		position: absolute;
+		height: 100%;
+		top: 0;
+		left: -100%;
+		background: #fff;
+		transition: all .2s linear;
+		z-index: 100;
+
+		&.show {
+			left: 0;
+		}
+	}
+
+	.data-tree__page .media-show__menu-btn {
+		display: flex;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.data-tree__page .navbar-sidebar.media-hide__navbar {
+		width: 100%;
+		min-width: 100%;
+		max-width: 100%;
+	}
+
+	.data-tree__page .media-show__menu-btn {
+		display: flex;
+	}
+
+	.data-tree__page {
+		.Breadcrumbs {
+			.BreadcrumbsItem:first-child {
+				display: none;
+			}
+
+			.BreadcrumbsItem-Delimiter {
+				display: none;
+			}
 		}
 	}
 }
