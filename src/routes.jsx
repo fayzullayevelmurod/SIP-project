@@ -18,6 +18,7 @@ import {
   Map,
   MapTwo,
   Messenger,
+  Modeling,
   MultiMenu,
   NotFound,
   ObjectModel,
@@ -69,4 +70,5 @@ const routes = [
   { path: "data-tree", element: <DataTree /> },
   { path: "multi-menu", element: <MultiMenu /> },
   { path: "columns", element: <Columns /> },
+	{path: 'modeling', element: <Modeling />}
 ];

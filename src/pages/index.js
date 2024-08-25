@@ -34,3 +34,4 @@ export { default as DataTree } from './data-tree/DataTree';
 export { default as MultiMenu } from './data-tree/MultiMenu';
 export { default as Columns } from './data-tree/Columns';
 export { default as MapTwo } from './map/MapTwo';
+export { default as Modeling } from './modeling/Modeling';

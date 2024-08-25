@@ -61,7 +61,10 @@ import document from './icons/document.svg';
 import folderZip from './icons/folder-zip.svg';
 import reddit from './icons/reddit.svg';
 import groupLocation from './group-location.png';
-
+import modelingImg from './modeling-img.png';
+import iconGeoOrg from './icons/iconGeoOrg.svg';
+import panel from './icons/panel.svg';
+import IconNodeStep from './icons/IconNodeStep.svg';
 
 export default {
 	avatar,
@@ -126,5 +129,9 @@ export default {
 	document,
 	folderZip,
 	reddit,
-	groupLocation
+	groupLocation,
+	modelingImg,
+	iconGeoOrg,
+	panel,
+	IconNodeStep
 };
