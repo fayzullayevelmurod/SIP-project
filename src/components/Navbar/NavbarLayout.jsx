@@ -17,6 +17,10 @@ import { IconArrowPrevious } from "@consta/icons/IconArrowPrevious";
 import { useContext, useEffect, useState } from "react";
 import assets from "../../assets";
 import { ShowNavContext } from "../../context/ShowNavContext";
+import { IconDocFilled } from "@consta/icons/IconDocFilled";
+import { IconRing } from "@consta/icons/IconRing";
+import { IconBento } from "@consta/icons/IconBento";
+import { Avatar } from "@consta/uikit/Avatar";
 
 const NavbarLayout = (props) => {
   const
@@ -60,9 +64,8 @@ const NavbarLayout = (props) => {
 
   return (
     <div
-      className={`navbar ${isActive ? "active" : ""} ${
-        showNav ? "active" : ""
-      }  ${activeNav ? "active" : ""} ${navbarHidden ? "navbar-hidden" : ""}`}
+      className={`navbar ${isActive ? "active" : ""} ${showNav ? "active" : ""
+        }  ${activeNav ? "active" : ""} ${navbarHidden ? "navbar-hidden" : ""}`}
     >
       <div className="navbar-top">
         {hideHamburger ? null : (
@@ -115,8 +118,8 @@ const NavbarLayout = (props) => {
             iconPosition="right"
             onClick={() => handleCollapseToggle("collapse1")}
           >
-            <a href="#!">Общая</a>
-            <a href="#!">Детальная</a>
+            <a href="/dashboard">Общая</a>
+            <a href="/report">Детальная</a>
           </Collapse>
 
           <Collapse
@@ -134,7 +137,7 @@ const NavbarLayout = (props) => {
             iconPosition="right"
             onClick={() => handleCollapseToggle("collapse2")}
           >
-            <a href="#!">Карточки</a>
+            <a href="/projects">Карточки</a>
             <a href="#!">Список</a>
             <a href="#!">Детальная</a>
           </Collapse>
@@ -154,7 +157,7 @@ const NavbarLayout = (props) => {
             iconPosition="right"
             onClick={() => handleCollapseToggle("collapse3")}
           >
-            <a href="#!">Общая</a>
+            <a href="/projects-number">Общая</a>
             <a href="#!">Информация</a>
             <a href="#!">Файлы</a>
             <a href="#!">Команда</a>
@@ -177,14 +180,35 @@ const NavbarLayout = (props) => {
             iconPosition="right"
             onClick={() => handleCollapseToggle("collapse4")}
           >
-            <a href="#!">Таблица</a>
-            <a href="#!">2D карта</a>
-            <a href="#!">3D сцена</a>
-            <a href="#!">Интерпретация</a>
-            <a href="#!">Корреляционная схема</a>
-            <a href="#!">Планшет</a>
+            <a href="/table">Таблица</a>
+            <a href="/visualization-2D">2D карта</a>
+            <a href="/visualization-3D">3D сцена</a>
+            <a href="/interpretation">Интерпретация</a>
+            <a href="/corr-circuit">Корреляционная схема</a>
+            <a href="/tablet">Планшет</a>
             <a href="#!">Расчетный процесс</a>
-            <a href="#!">Моделирование</a>
+            <a href="/modeling">Моделирование</a>
+          </Collapse>
+
+          <Collapse
+            className="nav-list col"
+            size="xs"
+            label={
+              <div className="flex items-center">
+                <div className="nav-list__icon">
+                  <IconDocFilled size="xs" />
+                </div>
+                <p className="nav-link collapse">Менеджер данных</p>
+              </div>
+            }
+            isOpen={isOpen["collapse04"]}
+            iconPosition="right"
+            onClick={() => handleCollapseToggle("collapse04")}
+          >
+            <a href="#!">Хранилище</a>
+            <a href="#!">Импорт из ПК</a>
+            <a href="#!">Импорт из БД</a>
+            <a href="#!">Корзина (СБД)</a>
           </Collapse>
 
           <Collapse
@@ -202,14 +226,8 @@ const NavbarLayout = (props) => {
             iconPosition="right"
             onClick={() => handleCollapseToggle("collapse5")}
           >
-            <a href="#!">Таблица</a>
-            <a href="#!">2D карта</a>
-            <a href="#!">3D сцена</a>
-            <a href="#!">Интерпретация</a>
-            <a href="#!">Корреляционная схема</a>
-            <a href="#!">Планшет</a>
-            <a href="#!">Расчетный процесс</a>
-            <a href="#!">Моделирование</a>
+            <a href="/modeling">Моделирование</a>
+            <a href="/estimated">Расчетный</a>
           </Collapse>
 
           <Collapse
@@ -236,13 +254,43 @@ const NavbarLayout = (props) => {
                 <div className="nav-list__icon">
                   <IconTree size="xs" />
                 </div>
-                <a href="#!" className="nav-link collapse">
+                <a href="/data-tree" className="nav-link collapse">
                   Дерево данных
                 </a>
               </div>
             }
             iconPosition=""
-          ></Collapse>
+          >
+          </Collapse>
+
+          <div className="parent-links">
+            <a href="/data-tree">Дерево</a>
+            <a href="/multi-menu">Мульти-меню</a>
+            <a href="/columns">Колонки</a>
+          </div>
+
+          <Collapse
+            className="nav-list col"
+            size="xs"
+            label={
+              <div className="flex items-center">
+                <div className="nav-list__icon">
+                  <IconTree size="xs" />
+                </div>
+                <a href="/data-tree" className="nav-link collapse">
+                  Мессенджеры
+                </a>
+              </div>
+            }
+            iconPosition=""
+          >
+          </Collapse>
+
+          <div className="parent-links">
+            <a href="/messenger/*">Почта</a>
+            <a href="/messenger/personal/1">Чат</a>
+            <a href="/chat-gpt/*">ЧатGPT</a>
+          </div>
 
           <Collapse
             className="nav-list col"
@@ -252,7 +300,7 @@ const NavbarLayout = (props) => {
                 <div className="nav-list__icon">
                   <IconType size="xs" />
                 </div>
-                <a href="#!" className="nav-link collapse">
+                <a href="/personal-information" className="nav-link collapse">
                   Формы
                 </a>
               </div>
@@ -275,10 +323,10 @@ const NavbarLayout = (props) => {
             iconPosition="right"
             onClick={() => handleCollapseToggle("collapse6")}
           >
-            <a href="#!">Нет данных</a>
-            <a href="#!">Запросить доступ</a>
-            <a href="#!">Ошибка 404</a>
-            <a href="#!">Ошибка 500</a>
+            <a href="/*">Нет данных</a>
+            <a href="/*">Запросить доступ</a>
+            <a href="/*">Ошибка 404</a>
+            <a href="/*">Ошибка 500</a>
           </Collapse>
 
           <Collapse
@@ -313,17 +361,47 @@ const NavbarLayout = (props) => {
             }
             iconPosition=""
           ></Collapse>
+
+          <div className="notification-collapse">
+            <Collapse
+              className="nav-list col mb-4"
+              size="xs"
+              label={
+                <div className="flex items-center">
+                  <div className="nav-list__icon blue-icon">
+                    <IconRing size="xs" />
+                  </div>
+                  <a href="#!" className="nav-link collapse">
+                    Заказать модуль
+                  </a>
+                </div>
+              }
+              iconPosition=""
+            ></Collapse>
+
+            <Collapse
+              className="nav-list col mb-4"
+              size="xs"
+              label={
+                <div className="flex items-center">
+                  <div className="nav-list__icon blue-icon">
+                    <IconBento size="xs" />
+                  </div>
+                  <a href="#!" className="nav-link collapse">
+                    Приложения
+                  </a>
+                </div>
+              }
+              iconPosition=""
+            ></Collapse>
+          </div>
         </div>
       </div>
-
+      <div className="avatar-box">
+        <Avatar name="Вадим Матвеев" url={assets.avatar} />
+        <span>Имя Фамилия</span>
+      </div>
       <div className="navbar-bottom">
-        <Button
-          view="clear"
-          size="xs"
-          onlyIcon
-          iconLeft={IconSettings}
-          className="hamburger-menu"
-        />
         <Button
           view="clear"
           size="xs"

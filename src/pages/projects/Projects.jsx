@@ -231,7 +231,7 @@ const Projects = () => {
                         gap: 'm',
                       },
                       768: {
-                        cols: 34,
+                        cols: 3,
                         gap: '2xl',
                       },
                     }}

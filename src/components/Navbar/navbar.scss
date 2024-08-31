@@ -30,6 +30,7 @@
 .navbar .hamburger-menu {
   margin: 0 4px;
   display: flex;
+
   &.media-block {
     display: none;
   }
@@ -65,7 +66,7 @@
   gap: 0 !important;
 }
 
-.header .header-left .header-breadcrumbs > button {
+.header .header-left .header-breadcrumbs>button {
   /* margin-left: 16px; */
 }
 
@@ -141,8 +142,74 @@
   padding: 0;
 }
 
+.navbar .parent-links {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s;
+  transition-timing-function: cubic-bezier(.7, 0, .5, 1)
+}
+
+.navbar.active .parent-links {
+  max-height: fit-content;
+}
+
+.navbar .avatar-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0 12px 4px;
+  display: none;
+
+  .Avatar{
+    overflow: visible;
+  }
+
+  .Avatar-Image {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  span {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+    color: #002033;
+  }
+}
+.navbar.active .avatar-box {
+  display: flex;
+}
+
+.navbar .notification-collapse {
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .Collapse-Label {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+
+  .nav-list__icon {
+    width: 24px;
+    height: 24px;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.blue-icon path {
+  fill: #00395CCC !important;
+}
+
 .navbar .Collapse-Body .Collapse-Content p,
-.navbar .Collapse-Body .Collapse-Content a {
+.navbar .Collapse-Body .Collapse-Content a,
+.navbar .parent-links a {
   font-size: 13px !important;
   text-align: left;
   font-weight: 400;
@@ -247,9 +314,11 @@
 .nav-profile__box.avatar {
   height: 32px;
 }
+
 .navbar-bottom {
   text-align: left;
 }
+
 .navbar-bottom .User-Name {
   margin-bottom: 0;
 }
@@ -266,6 +335,7 @@
 .navbar.active .arrow-prew {
   transform: rotate(180deg);
 }
+
 .notification {
   position: relative;
 }
@@ -328,16 +398,20 @@
       padding: 4px;
       transition: 0.2s linear;
       cursor: pointer;
+
       &:hover,
       &.active {
         background: #00426912;
+
         span {
           color: #002033;
         }
+
         svg path {
           fill: #002033;
         }
       }
+
       span {
         font-size: 13px;
         font-weight: 400;
@@ -347,18 +421,22 @@
     }
   }
 }
+
 .navbar .Collapse.active {
   .Collapse-Label {
     background-color: #00426912;
+
     .nav-link {
       font-weight: 400;
       color: #002033;
     }
+
     svg path {
       fill: #002033;
     }
   }
 }
+
 // messenger-navbar
 .messenger-navbar {
   .nav-list {
@@ -367,13 +445,16 @@
       // padding-left: 4px;
       justify-content: space-between;
     }
+
     .nav-link {
       padding-left: 0;
     }
+
     .flex {
       gap: 8px;
       align-items: center;
     }
+
     .msg-count {
       font-size: 13px;
       font-weight: 400;
@@ -388,6 +469,7 @@
     &.media-block {
       display: flex;
     }
+
     &.media-none {
       display: none;
     }
