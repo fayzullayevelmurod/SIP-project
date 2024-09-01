@@ -344,3 +344,7 @@ body {
     }
   }
 }
+
+.logo-box{
+  cursor: pointer;
+}

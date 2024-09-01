@@ -160,7 +160,7 @@
   padding: 12px 0 12px 4px;
   display: none;
 
-  .Avatar{
+  .Avatar {
     overflow: visible;
   }
 
@@ -177,6 +177,7 @@
     color: #002033;
   }
 }
+
 .navbar.active .avatar-box {
   display: flex;
 }
@@ -474,4 +475,42 @@
       display: none;
     }
   }
+}
+
+// absolute-navbar
+.absolute-navbar {
+  min-width: 320px;
+  max-width: 320px;
+  position: fixed;
+  top: 0;
+  left: 0 !important;
+  z-index: 1000;
+  height: 100vh;
+  background: #fff;
+  border-right: 1px solid #00416633;
+  transition: all .3s linear;
+
+  .top-logo {
+    padding: 0 4px 12px 4px;
+
+    p {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      color: #002033;
+    }
+  }
+
+  .avatar-box {
+    display: flex;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #002033D9;
 }

@@ -5,6 +5,7 @@ import { NavbarLayout } from '../../components/Navbar';
 import './visualization.scss';
 import { ActionBar } from '../../components';
 import assets from '../../assets';
+import AbsaluteNavbar from '../../components/Navbar/AbsaluteNavbar';
 
 const pagesLink = [
   {
@@ -22,7 +23,7 @@ const pagesLink = [
 ]
 
 const Visualization2D = () => {
-  const { handleToggleNav, activeNav, toggleHidden } = useContext(ShowNavContext);
+  const { handleToggleNav, activeNav, toggleHidden, handleAbsoluteNav, absoluteNav } = useContext(ShowNavContext);
 
   useEffect(() => {
     toggleHidden()
@@ -30,6 +31,11 @@ const Visualization2D = () => {
 
   return (
     <div className="visualization-page">
+      {absoluteNav && (
+        <div className="absolute-navbar">
+          <AbsaluteNavbar openNav={absoluteNav} />
+        </div>
+      )}
       <Header
         handleToggleNav={handleToggleNav}
         searchHeader={true}
@@ -37,13 +43,10 @@ const Visualization2D = () => {
         hamburgerLogo={true}
         dropdownLogo={true}
         pagesLink={pagesLink}
+        absoluteNav={absoluteNav}
+        handleAbsoluteNav={handleAbsoluteNav}
       />
       <div className='flex w-full'>
-        <NavbarLayout
-          hideHamburger={true}
-          openNav={activeNav}
-          setActiveNav={!activeNav}
-        />
         <div className='w-full h-scroll'>
           <ActionBar />
           <div className='vizualization-img image-box'>
