@@ -73,38 +73,3 @@ const routes = [
   { path: "modeling", element: <Modeling /> },
   { path: "estimated", element: <Estimated /> },
 ];
-
-
-{
-  /* // 
-https://sip-project-qjy2.onrender.com/
-https://sip-project-qjy2.onrender.com/*
-https://sip-project-qjy2.onrender.com/messenger/*
-https://sip-project-qjy2.onrender.com/chat-gpt/*
-https://sip-project-qjy2.onrender.com/personal-information
-https://sip-project-qjy2.onrender.com/table
-https://sip-project-qjy2.onrender.com/directory
-https://sip-project-qjy2.onrender.com/file-manager
-https://sip-project-qjy2.onrender.com/corr-circuit
-https://sip-project-qjy2.onrender.com/object-model
-https://sip-project-qjy2.onrender.com/interpretation
-https://sip-project-qjy2.onrender.com/visualization-2D
-https://sip-project-qjy2.onrender.com/visualization-3D
-https://sip-project-qjy2.onrender.com/tablet
-https://sip-project-qjy2.onrender.com/catalog
-https://sip-project-qjy2.onrender.com/dashboard
-https://sip-project-qjy2.onrender.com/report
-https://sip-project-qjy2.onrender.com/projects
-https://sip-project-qjy2.onrender.com/projects-number
-https://sip-project-qjy2.onrender.com/map
-https://sip-project-qjy2.onrender.com/map-two
-https://sip-project-qjy2.onrender.com/file-manager-import
-https://sip-project-qjy2.onrender.com/basket
-https://sip-project-qjy2.onrender.com/export-basket
-https://sip-project-qjy2.onrender.com/export-basket-unloading
-https://sip-project-qjy2.onrender.com/data-tree
-https://sip-project-qjy2.onrender.com/multi-menu
-https://sip-project-qjy2.onrender.com/columns
-https://sip-project-qjy2.onrender.com/modeling
-	*/
-}
