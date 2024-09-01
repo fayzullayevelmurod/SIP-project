@@ -31,11 +31,6 @@ const Visualization2D = () => {
 
   return (
     <div className="visualization-page">
-      {absoluteNav && (
-        <div className="absolute-navbar">
-          <AbsaluteNavbar openNav={absoluteNav} />
-        </div>
-      )}
       <Header
         handleToggleNav={handleToggleNav}
         searchHeader={true}

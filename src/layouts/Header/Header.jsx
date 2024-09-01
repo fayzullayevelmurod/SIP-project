@@ -193,6 +193,11 @@ const Header = (props) => {
           <User avatarUrl={assets.avatar} />
         </div>
       </header>
+      {absoluteNav && (
+        <div className="absolute-navbar">
+          <AbsaluteNavbar openNav={absoluteNav} />
+        </div>
+      )}
     </>
   );
 };
